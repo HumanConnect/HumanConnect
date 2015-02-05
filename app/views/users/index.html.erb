@@ -45,7 +45,14 @@
               url: '/users/show',
               method: 'GET'
             }).done(function(data){
+              
+              var i;
+              $('body').append("<ul></ul>")
+              for (i=0; i<data.length; i++) {
+                $('ul').append("<li>" + data[i].distance + "</li><li>" + data[i].startTime + "</li><li>" + data[i].endTime + '</li>')
+              }
               debugger
+
           })
           })
           
