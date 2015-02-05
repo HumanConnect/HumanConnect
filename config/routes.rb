@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  post '/apis/test' => 'apis#test'
+  post '/apis/query' => 'apis#query'
 
   get '/apis/show' => 'apis#show'
  
