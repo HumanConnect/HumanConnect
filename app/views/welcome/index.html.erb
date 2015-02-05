@@ -1,0 +1,28 @@
+<% if @error == true %>
+<h2>Sorry! Incorrect log-in information. Try again.</h2>
+<% end %>
+
+Sign up
+<form method = "POST" action = "/users">
+	First Name
+	<input type="text" name="fname"/>
+	Last Name
+	<input type="text" name="lname"/>
+	Email
+	<input type="text" name="email"/>
+	Password
+	<input type="text" name="password"/>
+	<input type= "submit"/>
+</form>
+
+Log In
+<form method="POST" action="/sessions">
+	Email
+	<input type="text" name="email">
+	Password
+	<input type="text" name="password"
+	<input type="submit"/>
+</form>
+
+
+
