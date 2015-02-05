@@ -2345,4 +2345,61 @@ Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for
 Started GET "/users/show" for 127.0.0.1 at 2015-02-05 15:08:38 -0500
 Processing by UsersController#show as */*
 Completed 200 OK in 567ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+<<<<<<< HEAD
 >>>>>>> 2fa0e4f6d68f53d6c661fa488ea4ca024e8a0022
+=======
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 15:45:14 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 75ms (Views: 64.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 15:45:14 -0500
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 15:45:14 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 15:45:14 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 15:45:14 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 15:45:14 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 15:45:15 -0500
+Processing by UsersController#show as */*
+Completed 200 OK in 455ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 15:52:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 77ms (Views: 67.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 15:52:48 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 15:52:48 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 15:52:48 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 15:52:48 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 15:52:48 -0500
+
+
+Started GET "/apis/show" for 127.0.0.1 at 2015-02-05 15:52:49 -0500
+Processing by ApisController#show as */*
+Completed 200 OK in 532ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+>>>>>>> 812a7cf68924c53ff7ce4d22bf151316ce5b74c7
