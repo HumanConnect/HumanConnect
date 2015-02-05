@@ -16,11 +16,16 @@ class UsersController < ApplicationController
 			})
 
 		test_data = HTTParty.get("https://api.humanapi.co/v1/human/activities?accesstoken=#{result['accessToken']}")
-	
-			
-		
+		@@test_data = test_data.to_json
+
 
 	end
+
+	def show
+		test_data = HTTParty.get("https://api.humanapi.co/v1/human/activities?accesstoken=#{@@test_data['accessToken']}")
+		test_data.to_json
+	end
+
 
 end
 

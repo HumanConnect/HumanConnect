@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   post '/users/test' => 'users#test'
 
+  get '/users/show' => 'users#show'
+ 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
