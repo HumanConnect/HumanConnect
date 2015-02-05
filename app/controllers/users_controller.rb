@@ -31,9 +31,11 @@ class UsersController < ApplicationController
 
 		test_data = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{accessToken}")
 		test_data2 = test_data.to_json
-		binding.pry
 
-		render(:test, {locals: {test_data: test_data}})
+		render json: test_data2
+		
+
+		# render(:show, {locals: {test_data: test_data}})
 	end
 
 
