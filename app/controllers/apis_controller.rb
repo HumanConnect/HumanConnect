@@ -1,7 +1,6 @@
 class ApisController < ApplicationController
 
-	def test
-
+	def query
 		##formatting the sessionTokenObject to send to Human API
 		sessionTokenObject = params['sessionTokenObject']
 		sessionTokenObject['clientSecret'] = params['client_secret']
