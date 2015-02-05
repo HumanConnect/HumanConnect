@@ -1341,6 +1341,7 @@ WHERE c.contype = 'f'
   AND t3.nspname = ANY (current_schemas(false))
 ORDER BY c.conname
 
+<<<<<<< HEAD
   [1m[36m (35.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
   [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
@@ -1432,6 +1433,125 @@ Started GET "/login" for 127.0.0.1 at 2015-02-05 14:45:32 -0500
 
 ActionController::RoutingError (No route matches [GET] "/login"):
   web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+=======
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:01:46 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 76ms (Views: 65.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:01:46 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:01:46 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:01:47 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:01:47 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:01:47 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:02:09 -0500
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 5999ms
+
+ActionView::MissingTemplate (Missing template users/show, application/show with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/Logan/src/wdi/humanconnect2/app/views"
+):
+  actionview (4.2.0) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.0) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+>>>>>>> 2fa0e4f6d68f53d6c661fa488ea4ca024e8a0022
   web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
@@ -1452,6 +1572,7 @@ ActionController::RoutingError (No route matches [GET] "/login"):
   rack (1.6.0) lib/rack/lock.rb:17:in `call'
   rack (1.6.0) lib/rack/content_length.rb:15:in `call'
   rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+<<<<<<< HEAD
   /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -1469,6 +1590,131 @@ Started GET "/login" for 127.0.0.1 at 2015-02-05 14:53:49 -0500
 
 ActionController::RoutingError (No route matches [GET] "/login"):
   web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:22:in `middleware_call'
+=======
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:14:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 78ms (Views: 69.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:14:58 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:14:59 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:14:59 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:14:59 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:14:59 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:15:00 -0500
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 616ms
+
+ActionView::MissingTemplate (Missing template users/show, application/show with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/Logan/src/wdi/humanconnect2/app/views"
+):
+  actionview (4.2.0) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.0) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.0) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.0) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.2.0) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.2.0) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.0) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.0) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.0) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.0) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.0) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.0) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:234:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:169:in `block in halting'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_process_action_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.0) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.0) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.0) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.0) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.0) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.0) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.0) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.0) lib/action_controller/metal.rb:195:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.0) lib/action_controller/metal.rb:236:in `block in action'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:42:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.0) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.0) lib/action_dispatch/routing/route_set.rb:802:in `call'
+  rack (1.6.0) lib/rack/etag.rb:24:in `call'
+  rack (1.6.0) lib/rack/conditionalget.rb:25:in `call'
+  rack (1.6.0) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.0) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.0) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.0) lib/active_record/connection_adapters/abstract/connection_pool.rb:647:in `call'
+  activerecord (4.2.0) lib/active_record/migration.rb:378:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `call'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:88:in `_run_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:734:in `_run_call_callbacks'
+  activesupport (4.2.0) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.0) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.0) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:18:in `middleware_call'
+>>>>>>> 2fa0e4f6d68f53d6c661fa488ea4ca024e8a0022
   web-console (2.0.0) lib/action_dispatch/debug_exceptions.rb:13:in `call'
   actionpack (4.2.0) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
   railties (4.2.0) lib/rails/rack/logger.rb:38:in `call_app'
@@ -1489,6 +1735,7 @@ ActionController::RoutingError (No route matches [GET] "/login"):
   rack (1.6.0) lib/rack/lock.rb:17:in `call'
   rack (1.6.0) lib/rack/content_length.rb:15:in `call'
   rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+<<<<<<< HEAD
   /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
   /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
   /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
@@ -1550,3 +1797,552 @@ SyntaxError (/Users/ivetteaddington/src/wdi/project_three/connect_redo/app/contr
   Rendered /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.9ms)
   Rendered /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.9ms)
   Rendered /Users/ivetteaddington/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (32.5ms)
+=======
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:18:01 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:18:01 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:01 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:01 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:01 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:01 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:18:40 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:18:40 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:40 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:40 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:40 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:18:40 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:18:41 -0500
+Processing by UsersController#show as */*
+  Rendered users/test.html.erb within layouts/application (6.9ms)
+Completed 500 Internal Server Error in 524ms
+
+ActionView::Template::Error (undefined method `type' for #<Hash:0x007fed97974d70>):
+    1: <!-- <ul>
+    2: 	<% test_data.each do |test| %>
+    3: 		<li>
+    4: 			<%= test.type %>, 
+    5: 			<%= test.startTime %>, 
+    6: 			<%= test.endTime %>, 
+    7: 			<%= test.distance %>
+  app/views/users/test.html.erb:4:in `block in _app_views_users_test_html_erb__3295430676543878493_70329198322600'
+  app/views/users/test.html.erb:2:in `_app_views_users_test_html_erb__3295430676543878493_70329198322600'
+  app/controllers/users_controller.rb:36:in `show'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.text.erb (0.6ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.text.erb (0.7ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.text.erb (11.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:19:24 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 32ms (Views: 31.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:19:24 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:19:24 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:19:24 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:19:24 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:19:24 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:19:25 -0500
+Processing by UsersController#show as */*
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 500ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:19:26 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1&_=1423163964783" for 127.0.0.1 at 2015-02-05 14:19:26 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1&_=1423163964784" for 127.0.0.1 at 2015-02-05 14:19:26 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1&_=1423163964785" for 127.0.0.1 at 2015-02-05 14:19:26 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1&_=1423163964786" for 127.0.0.1 at 2015-02-05 14:19:26 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:20:02 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 33ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:20:02 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:20:02 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:20:02 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:20:02 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:20:02 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:20:07 -0500
+Processing by UsersController#show as */*
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 563ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:20:07 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1&_=1423164002976" for 127.0.0.1 at 2015-02-05 14:20:07 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1&_=1423164002977" for 127.0.0.1 at 2015-02-05 14:20:07 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1&_=1423164002978" for 127.0.0.1 at 2015-02-05 14:20:07 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1&_=1423164002979" for 127.0.0.1 at 2015-02-05 14:20:07 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:22:12 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 33ms (Views: 33.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:12 -0500
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:22:12 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:12 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:12 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:12 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:22:14 -0500
+Processing by UsersController#show as */*
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 490ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:22:14 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1&_=1423164132885" for 127.0.0.1 at 2015-02-05 14:22:14 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1&_=1423164132886" for 127.0.0.1 at 2015-02-05 14:22:14 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1&_=1423164132887" for 127.0.0.1 at 2015-02-05 14:22:14 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1&_=1423164132888" for 127.0.0.1 at 2015-02-05 14:22:14 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:22:58 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 34ms (Views: 33.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:22:58 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:58 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:58 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:58 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:22:58 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:22:59 -0500
+Processing by UsersController#show as */*
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 452ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:23:24 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:24 -0500
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:23:25 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:25 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:25 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:25 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:23:26 -0500
+Processing by UsersController#show as */*
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 526ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:23:43 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:23:43 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:43 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:43 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:43 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:23:43 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:23:44 -0500
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 1000398ms
+
+ActionView::MissingTemplate (Missing template users/show, application/show with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/Logan/src/wdi/humanconnect2/app/views"
+):
+  app/controllers/users_controller.rb:38:in `show'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:40:25 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:40:25 -0500
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 2160ms
+
+ActionView::MissingTemplate (Missing template users/[{"id":"54d3b32d42fd7a5c732c6be1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T15:27:17.000Z","endTime":"2015-02-05T15:42:32.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":915,"distance":686,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.722Z","updatedAt":"2015-02-05T18:22:52.722Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6be0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:42:53.000Z","endTime":"2015-02-05T13:43:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":28,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.721Z","updatedAt":"2015-02-05T18:22:52.721Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdf","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:04:27.000Z","endTime":"2015-02-05T13:15:24.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":729,"steps":1036,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bde","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:47:30.000Z","endTime":"2015-02-05T12:58:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":958,"steps":1177,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:46:49.000Z","endTime":"2015-02-05T12:47:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":41,"distance":27,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.719Z","updatedAt":"2015-02-05T18:22:52.719Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T02:18:53.000Z","endTime":"2015-02-05T02:19:13.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.718Z","updatedAt":"2015-02-05T18:22:52.718Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:22:23.000Z","endTime":"2015-02-05T01:26:39.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":256,"distance":239,"steps":374,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.717Z","updatedAt":"2015-02-05T18:22:52.717Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bda","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:19:36.000Z","endTime":"2015-02-05T01:19:38.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":2,"distance":1,"steps":2,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.680Z","updatedAt":"2015-02-05T18:22:52.680Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:12:05.000Z","endTime":"2015-02-05T01:19:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":1075,"steps":896,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.679Z","updatedAt":"2015-02-05T18:22:52.679Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:52:27.000Z","endTime":"2015-02-05T01:00:34.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":487,"distance":651,"steps":543,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.678Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:31:04.000Z","endTime":"2015-02-05T00:38:36.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":542,"steps":723,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:00:00.000Z","endTime":"2015-02-05T00:31:04.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1864,"distance":6210,"steps":4762,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.677Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c3a","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:40:44.000Z","endTime":"2015-02-04T23:59:59.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1155,"distance":3680,"steps":2950,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c39","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:39:48.000Z","endTime":"2015-02-04T23:40:21.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":33,"distance":30,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c38","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:13:52.000Z","endTime":"2015-02-04T22:21:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":458,"distance":611,"steps":676,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.302Z","updatedAt":"2015-02-05T19:22:01.302Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c37","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:06:42.000Z","endTime":"2015-02-04T22:09:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":182,"steps":242,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.301Z","updatedAt":"2015-02-05T19:22:01.301Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c36","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T21:04:01.000Z","endTime":"2015-02-04T21:04:09.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":8,"distance":5,"steps":10,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c35","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T19:03:35.000Z","endTime":"2015-02-04T19:04:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":74,"distance":37,"steps":62,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c34","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T18:24:37.000Z","endTime":"2015-02-04T18:30:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":345,"distance":258,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.275Z","updatedAt":"2015-02-05T19:22:01.275Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c33","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T17:19:38.000Z","endTime":"2015-02-04T17:19:58.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.274Z","updatedAt":"2015-02-05T19:22:01.274Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c32","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T14:59:33.000Z","endTime":"2015-02-04T15:01:31.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":118,"distance":58,"steps":91,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.273Z","updatedAt":"2015-02-05T19:22:01.273Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c31","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:47:02.000Z","endTime":"2015-02-04T13:47:07.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":5,"distance":3,"steps":6,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.272Z","updatedAt":"2015-02-05T19:22:01.272Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c30","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:37:28.000Z","endTime":"2015-02-04T13:47:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":575,"distance":780,"steps":946,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:15:25.000Z","endTime":"2015-02-04T13:25:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":632,"distance":970,"steps":1130,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:14:14.000Z","endTime":"2015-02-04T13:15:10.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":42,"steps":85,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.270Z","updatedAt":"2015-02-05T19:22:01.270Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cad","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:36:57.000Z","endTime":"2015-02-03T23:37:15.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":18,"distance":12,"steps":25,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.511Z","updatedAt":"2015-02-05T19:22:04.511Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cac","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:25:53.000Z","endTime":"2015-02-03T23:36:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":664,"distance":952,"steps":1101,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.510Z","updatedAt":"2015-02-05T19:22:04.510Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cab","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:07:08.000Z","endTime":"2015-02-03T23:13:52.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":404,"distance":763,"steps":850,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6caa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:03:17.000Z","endTime":"2015-02-03T23:05:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":152,"distance":199,"steps":266,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T21:29:21.000Z","endTime":"2015-02-03T21:30:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":95,"distance":47,"steps":53,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.508Z","updatedAt":"2015-02-05T19:22:04.508Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T20:17:26.000Z","endTime":"2015-02-03T20:17:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":9,"distance":6,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.507Z","updatedAt":"2015-02-05T19:22:04.507Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T18:28:13.000Z","endTime":"2015-02-03T18:29:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":47,"distance":28,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.506Z","updatedAt":"2015-02-05T19:22:04.506Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T17:32:59.000Z","endTime":"2015-02-03T17:36:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":216,"distance":169,"steps":225,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca5","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T14:01:28.000Z","endTime":"2015-02-03T14:04:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":155,"distance":116,"steps":136,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca4","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:31:42.000Z","endTime":"2015-02-03T13:34:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":194,"distance":146,"steps":195,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.504Z","updatedAt":"2015-02-05T19:22:04.504Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca3","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:23:00.000Z","endTime":"2015-02-03T13:31:42.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":522,"distance":641,"steps":752,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.503Z","updatedAt":"2015-02-05T19:22:04.503Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca2","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:21:59.000Z","endTime":"2015-02-03T13:22:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":58,"distance":39,"steps":78,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.502Z","updatedAt":"2015-02-05T19:22:04.502Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:54:39.000Z","endTime":"2015-02-03T11:58:47.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":248,"distance":234,"steps":293,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:38:46.000Z","endTime":"2015-02-03T11:49:08.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":622,"distance":933,"steps":1167,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:31:09.000Z","endTime":"2015-02-03T11:31:55.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":46,"distance":31,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.500Z","updatedAt":"2015-02-05T19:22:04.500Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T03:07:11.000Z","endTime":"2015-02-03T03:07:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":11,"distance":7,"steps":14,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.499Z","updatedAt":"2015-02-05T19:22:04.499Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9d","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:04:57.000Z","endTime":"2015-02-03T00:05:33.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":36,"distance":25,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.498Z","updatedAt":"2015-02-05T19:22:04.498Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9c","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:00:00.000Z","endTime":"2015-02-03T00:04:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":297,"distance":509,"steps":502,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.497Z","updatedAt":"2015-02-05T19:22:04.497Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T23:55:38.000Z","endTime":"2015-02-03T00:00:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":262,"distance":358,"steps":442,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:27:41.000Z","endTime":"2015-02-02T22:27:48.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":7,"distance":7,"steps":13,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:21:11.000Z","endTime":"2015-02-02T22:27:41.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":390,"distance":627,"steps":725,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.413Z","updatedAt":"2015-02-05T18:23:00.413Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:16:57.000Z","endTime":"2015-02-02T22:19:16.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":139,"distance":155,"steps":206,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.412Z","updatedAt":"2015-02-05T18:23:00.412Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T18:31:45.000Z","endTime":"2015-02-02T18:34:05.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":140,"distance":109,"steps":145,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.411Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T17:40:04.000Z","endTime":"2015-02-02T17:42:59.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":159,"steps":212,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T14:09:31.000Z","endTime":"2015-02-02T14:10:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":37,"steps":75,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.410Z","humanId":"627b7547254ac2100690f2c00e3cb169"}], application/[{"id":"54d3b32d42fd7a5c732c6be1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T15:27:17.000Z","endTime":"2015-02-05T15:42:32.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":915,"distance":686,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.722Z","updatedAt":"2015-02-05T18:22:52.722Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6be0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:42:53.000Z","endTime":"2015-02-05T13:43:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":28,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.721Z","updatedAt":"2015-02-05T18:22:52.721Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdf","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:04:27.000Z","endTime":"2015-02-05T13:15:24.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":729,"steps":1036,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bde","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:47:30.000Z","endTime":"2015-02-05T12:58:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":958,"steps":1177,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:46:49.000Z","endTime":"2015-02-05T12:47:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":41,"distance":27,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.719Z","updatedAt":"2015-02-05T18:22:52.719Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T02:18:53.000Z","endTime":"2015-02-05T02:19:13.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.718Z","updatedAt":"2015-02-05T18:22:52.718Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:22:23.000Z","endTime":"2015-02-05T01:26:39.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":256,"distance":239,"steps":374,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.717Z","updatedAt":"2015-02-05T18:22:52.717Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bda","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:19:36.000Z","endTime":"2015-02-05T01:19:38.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":2,"distance":1,"steps":2,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.680Z","updatedAt":"2015-02-05T18:22:52.680Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:12:05.000Z","endTime":"2015-02-05T01:19:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":1075,"steps":896,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.679Z","updatedAt":"2015-02-05T18:22:52.679Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:52:27.000Z","endTime":"2015-02-05T01:00:34.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":487,"distance":651,"steps":543,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.678Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:31:04.000Z","endTime":"2015-02-05T00:38:36.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":542,"steps":723,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:00:00.000Z","endTime":"2015-02-05T00:31:04.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1864,"distance":6210,"steps":4762,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.677Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c3a","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:40:44.000Z","endTime":"2015-02-04T23:59:59.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1155,"distance":3680,"steps":2950,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c39","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:39:48.000Z","endTime":"2015-02-04T23:40:21.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":33,"distance":30,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c38","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:13:52.000Z","endTime":"2015-02-04T22:21:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":458,"distance":611,"steps":676,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.302Z","updatedAt":"2015-02-05T19:22:01.302Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c37","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:06:42.000Z","endTime":"2015-02-04T22:09:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":182,"steps":242,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.301Z","updatedAt":"2015-02-05T19:22:01.301Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c36","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T21:04:01.000Z","endTime":"2015-02-04T21:04:09.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":8,"distance":5,"steps":10,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c35","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T19:03:35.000Z","endTime":"2015-02-04T19:04:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":74,"distance":37,"steps":62,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c34","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T18:24:37.000Z","endTime":"2015-02-04T18:30:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":345,"distance":258,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.275Z","updatedAt":"2015-02-05T19:22:01.275Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c33","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T17:19:38.000Z","endTime":"2015-02-04T17:19:58.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.274Z","updatedAt":"2015-02-05T19:22:01.274Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c32","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T14:59:33.000Z","endTime":"2015-02-04T15:01:31.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":118,"distance":58,"steps":91,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.273Z","updatedAt":"2015-02-05T19:22:01.273Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c31","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:47:02.000Z","endTime":"2015-02-04T13:47:07.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":5,"distance":3,"steps":6,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.272Z","updatedAt":"2015-02-05T19:22:01.272Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c30","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:37:28.000Z","endTime":"2015-02-04T13:47:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":575,"distance":780,"steps":946,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:15:25.000Z","endTime":"2015-02-04T13:25:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":632,"distance":970,"steps":1130,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:14:14.000Z","endTime":"2015-02-04T13:15:10.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":42,"steps":85,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.270Z","updatedAt":"2015-02-05T19:22:01.270Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cad","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:36:57.000Z","endTime":"2015-02-03T23:37:15.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":18,"distance":12,"steps":25,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.511Z","updatedAt":"2015-02-05T19:22:04.511Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cac","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:25:53.000Z","endTime":"2015-02-03T23:36:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":664,"distance":952,"steps":1101,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.510Z","updatedAt":"2015-02-05T19:22:04.510Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cab","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:07:08.000Z","endTime":"2015-02-03T23:13:52.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":404,"distance":763,"steps":850,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6caa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:03:17.000Z","endTime":"2015-02-03T23:05:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":152,"distance":199,"steps":266,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T21:29:21.000Z","endTime":"2015-02-03T21:30:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":95,"distance":47,"steps":53,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.508Z","updatedAt":"2015-02-05T19:22:04.508Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T20:17:26.000Z","endTime":"2015-02-03T20:17:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":9,"distance":6,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.507Z","updatedAt":"2015-02-05T19:22:04.507Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T18:28:13.000Z","endTime":"2015-02-03T18:29:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":47,"distance":28,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.506Z","updatedAt":"2015-02-05T19:22:04.506Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T17:32:59.000Z","endTime":"2015-02-03T17:36:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":216,"distance":169,"steps":225,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca5","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T14:01:28.000Z","endTime":"2015-02-03T14:04:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":155,"distance":116,"steps":136,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca4","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:31:42.000Z","endTime":"2015-02-03T13:34:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":194,"distance":146,"steps":195,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.504Z","updatedAt":"2015-02-05T19:22:04.504Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca3","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:23:00.000Z","endTime":"2015-02-03T13:31:42.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":522,"distance":641,"steps":752,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.503Z","updatedAt":"2015-02-05T19:22:04.503Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca2","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:21:59.000Z","endTime":"2015-02-03T13:22:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":58,"distance":39,"steps":78,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.502Z","updatedAt":"2015-02-05T19:22:04.502Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:54:39.000Z","endTime":"2015-02-03T11:58:47.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":248,"distance":234,"steps":293,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:38:46.000Z","endTime":"2015-02-03T11:49:08.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":622,"distance":933,"steps":1167,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:31:09.000Z","endTime":"2015-02-03T11:31:55.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":46,"distance":31,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.500Z","updatedAt":"2015-02-05T19:22:04.500Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T03:07:11.000Z","endTime":"2015-02-03T03:07:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":11,"distance":7,"steps":14,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.499Z","updatedAt":"2015-02-05T19:22:04.499Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9d","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:04:57.000Z","endTime":"2015-02-03T00:05:33.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":36,"distance":25,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.498Z","updatedAt":"2015-02-05T19:22:04.498Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9c","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:00:00.000Z","endTime":"2015-02-03T00:04:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":297,"distance":509,"steps":502,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.497Z","updatedAt":"2015-02-05T19:22:04.497Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T23:55:38.000Z","endTime":"2015-02-03T00:00:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":262,"distance":358,"steps":442,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:27:41.000Z","endTime":"2015-02-02T22:27:48.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":7,"distance":7,"steps":13,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:21:11.000Z","endTime":"2015-02-02T22:27:41.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":390,"distance":627,"steps":725,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.413Z","updatedAt":"2015-02-05T18:23:00.413Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:16:57.000Z","endTime":"2015-02-02T22:19:16.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":139,"distance":155,"steps":206,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.412Z","updatedAt":"2015-02-05T18:23:00.412Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T18:31:45.000Z","endTime":"2015-02-02T18:34:05.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":140,"distance":109,"steps":145,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.411Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T17:40:04.000Z","endTime":"2015-02-02T17:42:59.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":159,"steps":212,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T14:09:31.000Z","endTime":"2015-02-02T14:10:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":37,"steps":75,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.410Z","humanId":"627b7547254ac2100690f2c00e3cb169"}] with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/Logan/src/wdi/humanconnect2/app/views"
+):
+  app/controllers/users_controller.rb:35:in `show'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.4ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:40:27 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:40:27 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:40:27 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:40:27 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:40:27 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:40:44 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 40ms
+
+ActionView::Template::Error (couldn't find file 'turbolinks'
+  (in /Users/Logan/src/wdi/humanconnect2/app/assets/javascripts/application.js:15)):
+    3: <head>
+    4:   <title>Humanconnect</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application' %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2317445024694132441_70291239443480'
+  app/controllers/users_controller.rb:3:in `index'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (10.6ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.0ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (40.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:42:01 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 21ms
+
+ActionView::Template::Error (couldn't find file 'turbolinks'
+  (in /Users/Logan/src/wdi/humanconnect2/app/assets/javascripts/application.js:15)):
+    3: <head>
+    4:   <title>Humanconnect</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2317445024694132441_70291240307660'
+  app/controllers/users_controller.rb:3:in `index'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (7.8ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (32.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:42:31 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:43:06 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:43:47 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (couldn't find file 'turbolinks'
+  (in /Users/Logan/src/wdi/humanconnect2/app/assets/javascripts/application.js:15)):
+    3: <head>
+    4:   <title>Humanconnect</title>
+    5:   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    6:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    7:   <%= csrf_meta_tags %>
+    8: </head>
+    9: <body>
+  app/views/layouts/application.html.erb:6:in `_app_views_layouts_application_html_erb___2317445024694132441_70291240686400'
+  app/controllers/users_controller.rb:3:in `index'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_source.erb (8.0ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/_web_console.html.erb (1.3ms)
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/template_error.html.erb within rescues/layout (27.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:44:18 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 94ms (Views: 85.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:44:18 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:44:18 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:44:18 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:44:18 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:44:18 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:44:20 -0500
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 2118ms
+
+ActionView::MissingTemplate (Missing template users/[{"id":"54d3b32d42fd7a5c732c6be1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T15:27:17.000Z","endTime":"2015-02-05T15:42:32.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":915,"distance":686,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.722Z","updatedAt":"2015-02-05T18:22:52.722Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6be0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:42:53.000Z","endTime":"2015-02-05T13:43:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":28,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.721Z","updatedAt":"2015-02-05T18:22:52.721Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdf","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:04:27.000Z","endTime":"2015-02-05T13:15:24.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":729,"steps":1036,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bde","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:47:30.000Z","endTime":"2015-02-05T12:58:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":958,"steps":1177,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:46:49.000Z","endTime":"2015-02-05T12:47:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":41,"distance":27,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.719Z","updatedAt":"2015-02-05T18:22:52.719Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T02:18:53.000Z","endTime":"2015-02-05T02:19:13.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.718Z","updatedAt":"2015-02-05T18:22:52.718Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:22:23.000Z","endTime":"2015-02-05T01:26:39.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":256,"distance":239,"steps":374,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.717Z","updatedAt":"2015-02-05T18:22:52.717Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bda","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:19:36.000Z","endTime":"2015-02-05T01:19:38.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":2,"distance":1,"steps":2,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.680Z","updatedAt":"2015-02-05T18:22:52.680Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:12:05.000Z","endTime":"2015-02-05T01:19:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":1075,"steps":896,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.679Z","updatedAt":"2015-02-05T18:22:52.679Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:52:27.000Z","endTime":"2015-02-05T01:00:34.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":487,"distance":651,"steps":543,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.678Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:31:04.000Z","endTime":"2015-02-05T00:38:36.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":542,"steps":723,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:00:00.000Z","endTime":"2015-02-05T00:31:04.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1864,"distance":6210,"steps":4762,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.677Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c3a","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:40:44.000Z","endTime":"2015-02-04T23:59:59.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1155,"distance":3680,"steps":2950,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c39","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:39:48.000Z","endTime":"2015-02-04T23:40:21.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":33,"distance":30,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c38","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:13:52.000Z","endTime":"2015-02-04T22:21:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":458,"distance":611,"steps":676,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.302Z","updatedAt":"2015-02-05T19:22:01.302Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c37","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:06:42.000Z","endTime":"2015-02-04T22:09:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":182,"steps":242,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.301Z","updatedAt":"2015-02-05T19:22:01.301Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c36","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T21:04:01.000Z","endTime":"2015-02-04T21:04:09.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":8,"distance":5,"steps":10,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c35","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T19:03:35.000Z","endTime":"2015-02-04T19:04:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":74,"distance":37,"steps":62,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c34","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T18:24:37.000Z","endTime":"2015-02-04T18:30:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":345,"distance":258,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.275Z","updatedAt":"2015-02-05T19:22:01.275Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c33","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T17:19:38.000Z","endTime":"2015-02-04T17:19:58.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.274Z","updatedAt":"2015-02-05T19:22:01.274Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c32","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T14:59:33.000Z","endTime":"2015-02-04T15:01:31.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":118,"distance":58,"steps":91,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.273Z","updatedAt":"2015-02-05T19:22:01.273Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c31","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:47:02.000Z","endTime":"2015-02-04T13:47:07.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":5,"distance":3,"steps":6,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.272Z","updatedAt":"2015-02-05T19:22:01.272Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c30","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:37:28.000Z","endTime":"2015-02-04T13:47:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":575,"distance":780,"steps":946,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:15:25.000Z","endTime":"2015-02-04T13:25:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":632,"distance":970,"steps":1130,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:14:14.000Z","endTime":"2015-02-04T13:15:10.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":42,"steps":85,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.270Z","updatedAt":"2015-02-05T19:22:01.270Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cad","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:36:57.000Z","endTime":"2015-02-03T23:37:15.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":18,"distance":12,"steps":25,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.511Z","updatedAt":"2015-02-05T19:22:04.511Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cac","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:25:53.000Z","endTime":"2015-02-03T23:36:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":664,"distance":952,"steps":1101,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.510Z","updatedAt":"2015-02-05T19:22:04.510Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cab","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:07:08.000Z","endTime":"2015-02-03T23:13:52.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":404,"distance":763,"steps":850,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6caa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:03:17.000Z","endTime":"2015-02-03T23:05:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":152,"distance":199,"steps":266,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T21:29:21.000Z","endTime":"2015-02-03T21:30:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":95,"distance":47,"steps":53,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.508Z","updatedAt":"2015-02-05T19:22:04.508Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T20:17:26.000Z","endTime":"2015-02-03T20:17:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":9,"distance":6,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.507Z","updatedAt":"2015-02-05T19:22:04.507Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T18:28:13.000Z","endTime":"2015-02-03T18:29:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":47,"distance":28,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.506Z","updatedAt":"2015-02-05T19:22:04.506Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T17:32:59.000Z","endTime":"2015-02-03T17:36:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":216,"distance":169,"steps":225,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca5","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T14:01:28.000Z","endTime":"2015-02-03T14:04:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":155,"distance":116,"steps":136,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca4","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:31:42.000Z","endTime":"2015-02-03T13:34:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":194,"distance":146,"steps":195,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.504Z","updatedAt":"2015-02-05T19:22:04.504Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca3","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:23:00.000Z","endTime":"2015-02-03T13:31:42.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":522,"distance":641,"steps":752,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.503Z","updatedAt":"2015-02-05T19:22:04.503Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca2","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:21:59.000Z","endTime":"2015-02-03T13:22:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":58,"distance":39,"steps":78,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.502Z","updatedAt":"2015-02-05T19:22:04.502Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:54:39.000Z","endTime":"2015-02-03T11:58:47.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":248,"distance":234,"steps":293,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:38:46.000Z","endTime":"2015-02-03T11:49:08.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":622,"distance":933,"steps":1167,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:31:09.000Z","endTime":"2015-02-03T11:31:55.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":46,"distance":31,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.500Z","updatedAt":"2015-02-05T19:22:04.500Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T03:07:11.000Z","endTime":"2015-02-03T03:07:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":11,"distance":7,"steps":14,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.499Z","updatedAt":"2015-02-05T19:22:04.499Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9d","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:04:57.000Z","endTime":"2015-02-03T00:05:33.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":36,"distance":25,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.498Z","updatedAt":"2015-02-05T19:22:04.498Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9c","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:00:00.000Z","endTime":"2015-02-03T00:04:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":297,"distance":509,"steps":502,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.497Z","updatedAt":"2015-02-05T19:22:04.497Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T23:55:38.000Z","endTime":"2015-02-03T00:00:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":262,"distance":358,"steps":442,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:27:41.000Z","endTime":"2015-02-02T22:27:48.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":7,"distance":7,"steps":13,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:21:11.000Z","endTime":"2015-02-02T22:27:41.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":390,"distance":627,"steps":725,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.413Z","updatedAt":"2015-02-05T18:23:00.413Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:16:57.000Z","endTime":"2015-02-02T22:19:16.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":139,"distance":155,"steps":206,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.412Z","updatedAt":"2015-02-05T18:23:00.412Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T18:31:45.000Z","endTime":"2015-02-02T18:34:05.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":140,"distance":109,"steps":145,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.411Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T17:40:04.000Z","endTime":"2015-02-02T17:42:59.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":159,"steps":212,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T14:09:31.000Z","endTime":"2015-02-02T14:10:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":37,"steps":75,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.410Z","humanId":"627b7547254ac2100690f2c00e3cb169"}], application/[{"id":"54d3b32d42fd7a5c732c6be1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T15:27:17.000Z","endTime":"2015-02-05T15:42:32.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":915,"distance":686,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.722Z","updatedAt":"2015-02-05T18:22:52.722Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6be0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:42:53.000Z","endTime":"2015-02-05T13:43:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":28,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.721Z","updatedAt":"2015-02-05T18:22:52.721Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdf","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T13:04:27.000Z","endTime":"2015-02-05T13:15:24.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":729,"steps":1036,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bde","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:47:30.000Z","endTime":"2015-02-05T12:58:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":657,"distance":958,"steps":1177,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.720Z","updatedAt":"2015-02-05T18:22:52.720Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T12:46:49.000Z","endTime":"2015-02-05T12:47:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":41,"distance":27,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.719Z","updatedAt":"2015-02-05T18:22:52.719Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T02:18:53.000Z","endTime":"2015-02-05T02:19:13.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.718Z","updatedAt":"2015-02-05T18:22:52.718Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bdb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:22:23.000Z","endTime":"2015-02-05T01:26:39.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":256,"distance":239,"steps":374,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.717Z","updatedAt":"2015-02-05T18:22:52.717Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bda","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:19:36.000Z","endTime":"2015-02-05T01:19:38.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":2,"distance":1,"steps":2,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.680Z","updatedAt":"2015-02-05T18:22:52.680Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T01:12:05.000Z","endTime":"2015-02-05T01:19:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":1075,"steps":896,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.679Z","updatedAt":"2015-02-05T18:22:52.679Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:52:27.000Z","endTime":"2015-02-05T01:00:34.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":487,"distance":651,"steps":543,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.678Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:31:04.000Z","endTime":"2015-02-05T00:38:36.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":452,"distance":542,"steps":723,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.678Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b32d42fd7a5c732c6bd6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-05T00:00:00.000Z","endTime":"2015-02-05T00:31:04.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1864,"distance":6210,"steps":4762,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:22:52.677Z","updatedAt":"2015-02-05T18:22:52.677Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c3a","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:40:44.000Z","endTime":"2015-02-04T23:59:59.000Z","tzOffset":"-05:00","type":"running","source":"moves","duration":1155,"distance":3680,"steps":2950,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c39","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T23:39:48.000Z","endTime":"2015-02-04T23:40:21.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":33,"distance":30,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.303Z","updatedAt":"2015-02-05T19:22:01.303Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c38","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:13:52.000Z","endTime":"2015-02-04T22:21:30.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":458,"distance":611,"steps":676,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.302Z","updatedAt":"2015-02-05T19:22:01.302Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c37","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T22:06:42.000Z","endTime":"2015-02-04T22:09:37.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":182,"steps":242,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.301Z","updatedAt":"2015-02-05T19:22:01.301Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c36","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T21:04:01.000Z","endTime":"2015-02-04T21:04:09.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":8,"distance":5,"steps":10,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c35","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T19:03:35.000Z","endTime":"2015-02-04T19:04:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":74,"distance":37,"steps":62,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.300Z","updatedAt":"2015-02-05T19:22:01.300Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c34","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T18:24:37.000Z","endTime":"2015-02-04T18:30:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":345,"distance":258,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.275Z","updatedAt":"2015-02-05T19:22:01.275Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c33","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T17:19:38.000Z","endTime":"2015-02-04T17:19:58.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":20,"distance":13,"steps":26,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.274Z","updatedAt":"2015-02-05T19:22:01.274Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c32","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T14:59:33.000Z","endTime":"2015-02-04T15:01:31.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":118,"distance":58,"steps":91,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.273Z","updatedAt":"2015-02-05T19:22:01.273Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c31","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:47:02.000Z","endTime":"2015-02-04T13:47:07.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":5,"distance":3,"steps":6,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.272Z","updatedAt":"2015-02-05T19:22:01.272Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c30","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:37:28.000Z","endTime":"2015-02-04T13:47:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":575,"distance":780,"steps":946,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:15:25.000Z","endTime":"2015-02-04T13:25:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":632,"distance":970,"steps":1130,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.271Z","updatedAt":"2015-02-05T19:22:01.271Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33042fd7a5c732c6c2e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-04T13:14:14.000Z","endTime":"2015-02-04T13:15:10.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":42,"steps":85,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:01.270Z","updatedAt":"2015-02-05T19:22:01.270Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cad","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:36:57.000Z","endTime":"2015-02-03T23:37:15.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":18,"distance":12,"steps":25,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.511Z","updatedAt":"2015-02-05T19:22:04.511Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cac","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:25:53.000Z","endTime":"2015-02-03T23:36:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":664,"distance":952,"steps":1101,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.510Z","updatedAt":"2015-02-05T19:22:04.510Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6cab","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:07:08.000Z","endTime":"2015-02-03T23:13:52.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":404,"distance":763,"steps":850,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6caa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T23:03:17.000Z","endTime":"2015-02-03T23:05:49.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":152,"distance":199,"steps":266,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.509Z","updatedAt":"2015-02-05T19:22:04.509Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T21:29:21.000Z","endTime":"2015-02-03T21:30:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":95,"distance":47,"steps":53,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.508Z","updatedAt":"2015-02-05T19:22:04.508Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T20:17:26.000Z","endTime":"2015-02-03T20:17:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":9,"distance":6,"steps":12,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.507Z","updatedAt":"2015-02-05T19:22:04.507Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T18:28:13.000Z","endTime":"2015-02-03T18:29:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":47,"distance":28,"steps":55,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.506Z","updatedAt":"2015-02-05T19:22:04.506Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca6","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T17:32:59.000Z","endTime":"2015-02-03T17:36:35.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":216,"distance":169,"steps":225,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca5","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T14:01:28.000Z","endTime":"2015-02-03T14:04:03.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":155,"distance":116,"steps":136,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.505Z","updatedAt":"2015-02-05T19:22:04.505Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca4","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:31:42.000Z","endTime":"2015-02-03T13:34:56.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":194,"distance":146,"steps":195,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.504Z","updatedAt":"2015-02-05T19:22:04.504Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca3","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:23:00.000Z","endTime":"2015-02-03T13:31:42.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":522,"distance":641,"steps":752,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.503Z","updatedAt":"2015-02-05T19:22:04.503Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca2","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T13:21:59.000Z","endTime":"2015-02-03T13:22:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":58,"distance":39,"steps":78,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.502Z","updatedAt":"2015-02-05T19:22:04.502Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca1","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:54:39.000Z","endTime":"2015-02-03T11:58:47.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":248,"distance":234,"steps":293,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6ca0","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:38:46.000Z","endTime":"2015-02-03T11:49:08.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":622,"distance":933,"steps":1167,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.501Z","updatedAt":"2015-02-05T19:22:04.501Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9f","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T11:31:09.000Z","endTime":"2015-02-03T11:31:55.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":46,"distance":31,"steps":61,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.500Z","updatedAt":"2015-02-05T19:22:04.500Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9e","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T03:07:11.000Z","endTime":"2015-02-03T03:07:22.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":11,"distance":7,"steps":14,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.499Z","updatedAt":"2015-02-05T19:22:04.499Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9d","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:04:57.000Z","endTime":"2015-02-03T00:05:33.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":36,"distance":25,"steps":50,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.498Z","updatedAt":"2015-02-05T19:22:04.498Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33242fd7a5c732c6c9c","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-03T00:00:00.000Z","endTime":"2015-02-03T00:04:57.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":297,"distance":509,"steps":502,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T19:22:04.497Z","updatedAt":"2015-02-05T19:22:04.497Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfd","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T23:55:38.000Z","endTime":"2015-02-03T00:00:00.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":262,"distance":358,"steps":442,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfc","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:27:41.000Z","endTime":"2015-02-02T22:27:48.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":7,"distance":7,"steps":13,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.414Z","updatedAt":"2015-02-05T18:23:00.414Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfb","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:21:11.000Z","endTime":"2015-02-02T22:27:41.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":390,"distance":627,"steps":725,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.413Z","updatedAt":"2015-02-05T18:23:00.413Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cfa","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T22:16:57.000Z","endTime":"2015-02-02T22:19:16.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":139,"distance":155,"steps":206,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.412Z","updatedAt":"2015-02-05T18:23:00.412Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf9","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T18:31:45.000Z","endTime":"2015-02-02T18:34:05.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":140,"distance":109,"steps":145,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.411Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf8","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T17:40:04.000Z","endTime":"2015-02-02T17:42:59.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":175,"distance":159,"steps":212,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.411Z","humanId":"627b7547254ac2100690f2c00e3cb169"},{"id":"54d3b33442fd7a5c732c6cf7","userId":"54d3b2d1564d66fc43b49859","startTime":"2015-02-02T14:09:31.000Z","endTime":"2015-02-02T14:10:27.000Z","tzOffset":"-05:00","type":"walking","source":"moves","duration":56,"distance":37,"steps":75,"calories":0,"sourceData":{"manual":false},"createdAt":"2015-02-05T18:23:00.410Z","updatedAt":"2015-02-05T18:23:00.410Z","humanId":"627b7547254ac2100690f2c00e3cb169"}] with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/Logan/src/wdi/humanconnect2/app/views"
+):
+  app/controllers/users_controller.rb:35:in `show'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:48:12 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 307ms (Views: 271.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:48:13 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:48:13 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:48:13 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:48:13 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:48:13 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:48:15 -0500
+Processing by UsersController#show as */*
+Completed 500 Internal Server Error in 653ms
+
+ActionView::MissingTemplate (Missing template users/show, application/show with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates"
+  * "/Users/Logan/src/wdi/humanconnect2/app/views"
+):
+  app/controllers/users_controller.rb:35:in `show'
+
+
+  Rendered /Users/Logan/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.0.0/lib/action_dispatch/templates/rescues/missing_template.text.erb (1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 14:50:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 371ms (Views: 329.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 14:50:38 -0500
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 14:50:38 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 14:50:38 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 14:50:38 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 14:50:38 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 14:50:40 -0500
+Processing by UsersController#show as */*
+Completed 200 OK in 573ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 15:08:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 198ms (Views: 181.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 15:08:28 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 37ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-02-05 15:08:37 -0500
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application-5266d2988799ecc8fe6e81eaab412e7d.css?body=1" for 127.0.0.1 at 2015-02-05 15:08:37 -0500
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-02-05 15:08:37 -0500
+
+
+Started GET "/assets/turbolinks-da8ddad9c2c5483d4c5c30c1ce325253.js?body=1" for 127.0.0.1 at 2015-02-05 15:08:37 -0500
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-02-05 15:08:37 -0500
+
+
+Started GET "/assets/application-2260836f3eb52f693da43e83dda53bf1.js?body=1" for 127.0.0.1 at 2015-02-05 15:08:37 -0500
+
+
+Started GET "/users/show" for 127.0.0.1 at 2015-02-05 15:08:38 -0500
+Processing by UsersController#show as */*
+Completed 200 OK in 567ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+>>>>>>> 2fa0e4f6d68f53d6c661fa488ea4ca024e8a0022

@@ -8,6 +8,10 @@ end
 		render(:index)
 	end
 
+	def create
+        new_user = User.create({email: params["email"], password: params["password"]})
+    end
+
 	def test
 
 		##formatting the sessionTokenObject to send to Human API
@@ -36,9 +40,11 @@ end
 
 		test_data = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{accessToken}")
 		test_data2 = test_data.to_json
-		binding.pry
 
-		render(:test, {locals: {test_data: test_data}})
+		render json: test_data2
+		
+
+		# render(:show, {locals: {test_data: test_data}})
 	end
 
 
