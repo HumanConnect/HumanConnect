@@ -1,0 +1,115 @@
+[
+    [ 0] {
+                "id" => "54d39b3a42fd7a5c732c5850",
+            "userId" => "54d37fe5564d66fc43b4980e",
+         "startTime" => "2015-02-05T15:27:17.000Z",
+           "endTime" => "2015-02-05T15:42:32.000Z",
+          "tzOffset" => "-05:00",
+              "type" => "walking",
+            "source" => "moves",
+          "duration" => 915,
+          "distance" => 686,
+             "steps" => 12,
+          "calories" => 0,
+        "sourceData" => {
+            "manual" => false
+        },
+         "createdAt" => "2015-02-05T16:32:58.922Z",
+         "updatedAt" => "2015-02-05T16:32:58.922Z",
+           "humanId" => "6618e06044557826ce76068b125f9381"
+    },
+    [ 1] {
+                "id" => "54d3805e42fd7a5c732c4397",
+            "userId" => "54d37fe5564d66fc43b4980e",
+         "startTime" => "2015-02-05T13:42:53.000Z",
+           "endTime" => "2015-02-05T13:43:49.000Z",
+          "tzOffset" => "-05:00",
+              "type" => "walking",
+            "source" => "moves",
+          "duration" => 56,
+          "distance" => 28,
+             "steps" => 50,
+          "calories" => 0,
+        "sourceData" => {
+            "manual" => false
+        },
+         "createdAt" => "2015-02-05T16:32:58.885Z",
+         "updatedAt" => "2015-02-05T16:32:58.885Z",
+           "humanId" => "6618e06044557826ce76068b125f9381"
+    },
+    [ 2] {
+                "id" => "54d3805e42fd7a5c732c4396",
+            "userId" => "54d37fe5564d66fc43b4980e",
+         "startTime" => "2015-02-05T13:04:27.000Z",
+           "endTime" => "2015-02-05T13:15:24.000Z",
+          "tzOffset" => "-05:00",
+              "type" => "walking",
+            "source" => "moves",
+          "duration" => 657,
+          "distance" => 729,
+             "steps" => 1036,
+          "calories" => 0,
+        "sourceData" => {
+            "manual" => false
+        },
+         "createdAt" => "2015-02-05T16:32:58.885Z",
+         "updatedAt" => "2015-02-05T16:32:58.885Z",
+           "humanId" => "6618e06044557826ce76068b125f9381"
+    },
+    [ 3] {
+                "id" => "54d3805e42fd7a5c732c4395",
+            "userId" => "54d37fe5564d66fc43b4980e",
+         "startTime" => "2015-02-05T12:47:30.000Z",
+           "endTime" => "2015-02-05T12:58:27.000Z",
+          "tzOffset" => "-05:00",
+              "type" => "walking",
+            "source" => "moves",
+          "duration" => 657,
+          "distance" => 958,
+             "steps" => 1177,
+          "calories" => 0,
+        "sourceData" => {
+            "manual" => false
+        },
+         "createdAt" => "2015-02-05T16:32:58.884Z",
+         "updatedAt" => "2015-02-05T16:32:58.884Z",
+           "humanId" => "6618e06044557826ce76068b125f9381"
+    },
+    [ 4] {
+                "id" => "54d3805e42fd7a5c732c4394",
+            "userId" => "54d37fe5564d66fc43b4980e",
+         "startTime" => "2015-02-05T12:46:49.000Z",
+           "endTime" => "2015-02-05T12:47:30.000Z",
+          "tzOffset" => "-05:00",
+              "type" => "walking",
+            "source" => "moves",
+          "duration" => 41,
+          "distance" => 27,
+             "steps" => 55,
+          "calories" => 0,
+        "sourceData" => {
+            "manual" => false
+        },
+         "createdAt" => "2015-02-05T16:32:58.883Z",
+         "updatedAt" => "2015-02-05T16:32:58.883Z",
+           "humanId" => "6618e06044557826ce76068b125f9381"
+    },
+    [ 5] {
+                "id" => "54d3805e42fd7a5c732c4393",
+            "userId" => "54d37fe5564d66fc43b4980e",
+         "startTime" => "2015-02-05T02:18:53.000Z",
+           "endTime" => "2015-02-05T02:19:13.000Z",
+          "tzOffset" => "-05:00",
+              "type" => "walking",
+            "source" => "moves",
+          "duration" => 20,
+          "distance" => 13,
+             "steps" => 26,
+          "calories" => 0,
+        "sourceData" => {
+            "manual" => false
+        },
+         "createdAt" => "2015-02-05T16:32:58.882Z",
+         "updatedAt" => "2015-02-05T16:32:58.882Z",
+           "humanId" => "6618e06044557826ce76068b125f9381"
+    },
