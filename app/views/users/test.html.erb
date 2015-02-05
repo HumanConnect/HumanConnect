@@ -1,1 +1,11 @@
-<%= test_data %>
+<ul>
+	<% test_data.each do |test| %>
+		<li>
+			<%= test.type %>, 
+			<%= test.startTime %>, 
+			<%= test.endTime %>, 
+			<%= test.distance %>
+		</li>
+
+	<%end%> 
+</ul>
