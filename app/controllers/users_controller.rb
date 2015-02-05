@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	def create
 		new_user = User.create({email: params["email"], password: params["password"]})
 	end
-end
+
 
 	def index
 		render(:index)

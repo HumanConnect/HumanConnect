@@ -16,6 +16,8 @@ class ApisController < ApplicationController
 		test_data = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{result['accessToken']}")
 		redirect_to '/'
 
+		
+
 		# test_data = @@test_data.to_json
 	end
 
