@@ -18,7 +18,7 @@
                 	console.log(sessionTokenObject)
                 	
                 	$.ajax({
-                		url: '/users/test',
+                		url: '/apis/test',
                 		method: 'POST',
                 		data: {sessionTokenObject: sessionTokenObject, client_secret: '5b7393828121ee2a723be272f59a10d12d1f9d84'}
                 	}).done(function(data){
@@ -42,10 +42,17 @@
 
           $('.display_data').on('click', function() {
             $.ajax({
-              url: '/users/show',
+              url: '/apis/show',
               method: 'GET'
             }).done(function(data){
-              console.log(data)
+              
+              var i;
+              $('body').append("<ul></ul>")
+              for (i=0; i<data.length; i++) {
+                $('ul').append("<li>" + data[i].distance + "</li><li>" + data[i].startTime + "</li><li>" + data[i].endTime + '</li>')
+              }
+              debugger
+
           })
           })
           

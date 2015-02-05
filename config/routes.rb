@@ -7,9 +7,9 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  post '/users/test' => 'users#test'
+  post '/apis/test' => 'apis#test'
 
-  get '/users/show' => 'users#show'
+  get '/apis/show' => 'apis#show'
  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
