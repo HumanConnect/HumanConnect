@@ -18,7 +18,7 @@
                 	console.log(sessionTokenObject)
                 	
                 	$.ajax({
-                		url: '/users/test',
+                		url: '/apis/test',
                 		method: 'POST',
                 		data: {sessionTokenObject: sessionTokenObject, client_secret: '5b7393828121ee2a723be272f59a10d12d1f9d84'}
                 	}).done(function(data){
@@ -42,7 +42,7 @@
 
           $('.display_data').on('click', function() {
             $.ajax({
-              url: '/users/show',
+              url: '/apis/show',
               method: 'GET'
             }).done(function(data){
               
