@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+	def new
+		render(:new)
+	end
+
 	def create
 		new_user = User.create({
 			fname: params["fname"], 
@@ -6,6 +10,10 @@ class UsersController < ApplicationController
 			email: params["email"], 
 			password: params["password"]})
 		redirect_to "/"
+	end
+
+	def show
+		render(:show)
 	end
 
 	# def index

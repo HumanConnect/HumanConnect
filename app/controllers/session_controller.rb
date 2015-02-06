@@ -1,14 +1,19 @@
-class SessionsController < ApplicationController
+class SessionController < ApplicationController
+
+	def new
+		render(:new)
+	end
+
 
 	def create
 		user = User.find_by({email: params["email"]})
 		if user && user.authenticate(params["password"])
 			@error = false
 			session["user_id"] = user.id
-			redirect_to "/welcome/main"
+			redirect_to "/users/#{user.id}"
 		else
 			@error = true
-			render "welcome/index"
+			render(:new)
 		end
 	end
 end
