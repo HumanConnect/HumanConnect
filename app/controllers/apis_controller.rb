@@ -29,6 +29,10 @@ class ApisController < ApplicationController
 		
 		result = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
 
+		result_json = result.to_json
+
+		render json: result_json
+
 	end
 
 
