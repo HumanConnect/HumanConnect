@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 		new_user = User.create({email: params["email"], password: params["password"]})
 	end
 
-
 	def index
 		render(:index)
 	end
@@ -11,9 +10,4 @@ class UsersController < ApplicationController
 	def create
         new_user = User.create({email: params["email"], password: params["password"]})
     end
-
-<<<<<<< HEAD
-	
-
-=======
->>>>>>> cc8a6b778fc812030de2a5e8d429d4a6387ae55e
+end

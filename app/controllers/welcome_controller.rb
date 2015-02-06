@@ -12,4 +12,8 @@ class WelcomeController < ApplicationController
 			render "welcome/index"
 		end
 	end
+
+	def main
+		render(:main)
+	end
 end
