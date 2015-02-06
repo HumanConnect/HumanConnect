@@ -17,7 +17,8 @@ Rails.application.routes.draw do
 
   post '/apis/query' => 'apis#query'
 
-  get '/apis/show' => 'apis#show'
+
+  get '/users/:id/run' => 'apis#run'
 
   post '/users' => 'users#create'
 

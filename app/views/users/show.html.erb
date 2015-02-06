@@ -1,5 +1,9 @@
 "something else"
 
+<%= humanapi_data %>
+
+
+
 <script src='https://connect.humanapi.co/connect.js'></script>
 
 <img id='connect-health-data-btn' src='https://connect.humanapi.co/assets/button/blue.png'/>
@@ -7,62 +11,63 @@
 <button class="display_data">Display</button>
 
 <script>
+
+
+window.onload = function() {
+            
+            // for all data just sent from server
+            var humanapi_data = <%=raw(humanapi_data.to_json)%>
             var connectBtn = document.getElementById('connect-health-data-btn');
+            
         
             connectBtn.addEventListener('click', function(e) {
+             
               var option1 = {
-                // grab this from the app settings page
-                clientId: '985312a42cd462eb4f6b6a573730924a8deaead6',
-                // can be email or any other internal id of the user in your system
-                clientUserId: '7777777',
-                finish: function(err, sessionTokenObject) {
-                	console.log(sessionTokenObject)
-                	
-                	$.ajax({
-                		url: '/apis/query',
-                		method: 'POST',
-                		data: {sessionTokenObject: sessionTokenObject, client_secret: '5b7393828121ee2a723be272f59a10d12d1f9d84'}
-                	}).done(function(data){
-                		console.log(data)
-                	})
-                  // When user finishes health data connection to your app
-                  // `finish` function will be called.
-                  // `sessionTokenObject` object will have several fields in it.
-                  // You need to pass this `sessionTokenObject` object to your server
-                  // add `CLIENT_SECRET` to it and send `POST` request to the `https://user.humanapi.co/v1/connect/tokens` endpoint.
-                  // In return you will get `accessToken` for that user that can be used to query Human API.
-                },
-                close: function() {
-                  // do something here when user just closed popup
-                  // `close` callback function is optional
-                }
-              }
+                      clientId: humanapi_data[3].clientId,
+                      // can be email or any other internal id of the user in your system
+                      clientUserId: humanapi_data[2].user_id,
+                      finish: function(err, sessionTokenObject) {
+                      	console.log(sessionTokenObject)
+                  
+                          	$.ajax({
+                          		url: '/apis/query',
+                          		method: 'POST',
+                          		data: {sessionTokenObject: sessionTokenObject, client_secret: humanapi_data[4].client_secret, user_id: humanapi_data[2].user_id}
+                          	}).done(function(data){})
+                      },
+                      close: function() {
+                        // do something here when user just closed popup
+                        // `close` callback function is optional
+                      }
+              };
 
               var option2 = {
-              publicToken: '9fee6499b4d627b51e40b846864ed4bf', // you should have this from the succesful authentication flow
-              clientUserId: encodeURIComponent('999999999999'), // can be email or any other unique identifier
-              close: function() {
-                // optional callback that will be called if the user closes the popup 
-                // without connecting any data sources.
-              },
-              error: function(err) {
-                // optional callback that will be called if an error occurs while 
-                // loading the popup.
-                
-                // `err` is an object with the fields: `code`, `message`, `detailedMessage`
-               } 
+                    publicToken: humanapi_data[0].publicToken, 
+                    clientUserId: encodeURIComponent(humanapi_data[2].user_id), 
+                    close: function() {
+                      // optional callback that will be called if the user closes the popup 
+                      // without connecting any data sources.
+                    },
+                    error: function(err) {
+                      // optional callback that will be called if an error occurs while 
+                      // loading the popup.
+                      
+                      // `err` is an object with the fields: `code`, `message`, `detailedMessage`
+                     } 
               }
-              var data = true;
-                if (data === false)
+
+              if (humanapi_data[0].publicToken == null) {
                     HumanConnect.open(option1);
-                else if (data === true)
-                    HumanConnect.open(option2);
+              } else {
+                HumanConnect.open(option2);
+             }
+          
             });
 
 
           $('.display_data').on('click', function() {
             $.ajax({
-              url: '/apis/show',
+              url: '/users/' + humanapi_data[2].user_id + '/run',
               method: 'GET'
             }).done(function(data){
               
@@ -76,5 +81,6 @@
           })
           })
           
+}
 </script>
 
