@@ -11,16 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150205222341) do
+ActiveRecord::Schema.define(version: 20150206220529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "runs", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "start_time"
-    t.datetime "end_time"
-    t.string   "movement"
+  create_table "follows", force: :cascade do |t|
+    t.integer  "from_user_id"
+    t.integer  "to_user_id"
+    t.boolean  "requested"
+    t.boolean  "accepted"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "locations", force: :cascade do |t|
+    t.datetime "starttime"
+    t.datetime "endtime"
+    t.string   "name"
+    t.string   "type"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.datetime "time"
+    t.string   "type"
+    t.string   "name"
+    t.integer  "calories"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.datetime "starttime"
+    t.datetime "endtime"
+    t.integer  "duration"
+    t.integer  "steps"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

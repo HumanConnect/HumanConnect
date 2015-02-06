@@ -1,3 +1,0 @@
-class RunsController < ApplicationController
-
-end
