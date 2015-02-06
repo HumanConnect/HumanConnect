@@ -8,8 +8,9 @@
 
 <script>
             var connectBtn = document.getElementById('connect-health-data-btn');
+        
             connectBtn.addEventListener('click', function(e) {
-              var opts = {
+              var option1 = {
                 // grab this from the app settings page
                 clientId: '985312a42cd462eb4f6b6a573730924a8deaead6',
                 // can be email or any other internal id of the user in your system
@@ -36,7 +37,26 @@
                   // `close` callback function is optional
                 }
               }
-              HumanConnect.open(opts);
+
+              var option2 = {
+              publicToken: '9fee6499b4d627b51e40b846864ed4bf', // you should have this from the succesful authentication flow
+              clientUserId: encodeURIComponent('999999999999'), // can be email or any other unique identifier
+              close: function() {
+                // optional callback that will be called if the user closes the popup 
+                // without connecting any data sources.
+              },
+              error: function(err) {
+                // optional callback that will be called if an error occurs while 
+                // loading the popup.
+                
+                // `err` is an object with the fields: `code`, `message`, `detailedMessage`
+               } 
+              }
+              var data = true;
+                if (data === false)
+                    HumanConnect.open(option1);
+                else if (data === true)
+                    HumanConnect.open(option2);
             });
 
 
