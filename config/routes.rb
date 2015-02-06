@@ -18,6 +18,8 @@ get '/register' => 'users#index'
 
   get '/apis/show' => 'apis#show'
 
+  post 'users' => 'users#create'
+
 #resources :users
  
   # Example of regular route:
