@@ -25,7 +25,7 @@ window.onload = function() {
               var option1 = {
                       clientId: humanapi_data[3].clientId,
                       // can be email or any other internal id of the user in your system
-                      clientUserId: humanapi_data[2].user_id,
+                      clientUserId: humanapi_data[5].email,
                       finish: function(err, sessionTokenObject) {
                       	console.log(sessionTokenObject)
                   
@@ -43,7 +43,7 @@ window.onload = function() {
 
               var option2 = {
                     publicToken: humanapi_data[0].publicToken, 
-                    clientUserId: encodeURIComponent(humanapi_data[2].user_id), 
+                    clientUserId: encodeURIComponent(humanapi_data[5].email), 
                     close: function() {
                       // optional callback that will be called if the user closes the popup 
                       // without connecting any data sources.
@@ -76,7 +76,7 @@ window.onload = function() {
               for (i=0; i<data.length; i++) {
                 $('ul').append("<li>" + data[i].distance + "</li><li>" + data[i].startTime + "</li><li>" + data[i].endTime + '</li>')
               }
-              debugger
+              
 
           })
           })
