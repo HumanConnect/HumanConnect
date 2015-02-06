@@ -12,5 +12,8 @@ end
         new_user = User.create({email: params["email"], password: params["password"]})
     end
 
+<<<<<<< HEAD
 	
 
+=======
+>>>>>>> cc8a6b778fc812030de2a5e8d429d4a6387ae55e
