@@ -15,7 +15,9 @@
 //= require jquery
 //= require jquery_ujs
 //  require turbolinks -- Logan removed the = so this should be turned off
-//= require_tree .
+// require_tree . -- Logan turned off by removing the =
+
+//= require scripts
 
 
 

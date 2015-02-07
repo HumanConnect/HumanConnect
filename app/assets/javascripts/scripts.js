@@ -1,25 +1,10 @@
-
-<button class="btn step">step</button>
-<button class="btn meals">meals</button>
-<button class="btn location">location</button>
-
-
-<script src='https://connect.humanapi.co/connect.js'></script>
-
-<img id='connect-health-data-btn' src='https://connect.humanapi.co/assets/button/blue.png'/>
-
-<button class="display_data">Display</button>
-
-
-<script> var humanapi_data = <%=raw(humanapi_data.to_json)%> </script>
-
-<!--<script>
-
+console.log("loaded")
 
 window.onload = function() {
             
             // for all data just sent from server
-            var humanapi_data = <%=raw(humanapi_data.to_json)%>
+           
+            // var humanapi_data = <%=raw(humanapi_data.to_json)%>
             var connectBtn = document.getElementById('connect-health-data-btn');
             
         
@@ -98,6 +83,3 @@ window.onload = function() {
 
           
  }
-</script>
-
- 
