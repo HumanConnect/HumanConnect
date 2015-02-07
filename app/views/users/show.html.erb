@@ -1,7 +1,10 @@
 "something else"
 
-<%= humanapi_data %>
 
+
+<button class="btn step">step</button>
+<button class="btn meals">meals</button>
+<button class="btn location">location</button>
 
 
 <script src='https://connect.humanapi.co/connect.js'></script>
@@ -66,21 +69,35 @@ window.onload = function() {
 
 
           $('.display_data').on('click', function() {
+              $.ajax({
+                url: '/users/' + humanapi_data[2].user_id + '/step',
+                method: 'GET'
+              }).done(function(data){
+                  var i;
+                  $('body').append("<ul class='step_data'></ul>")
+                        for (i=0; i<data.length; i++) {
+                          $('ul').append("<li>" + data[i].distance + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
+                        }   
+              })
+          })
+
+          $('.location').on('click', function() {
             $.ajax({
-              url: '/users/' + humanapi_data[2].user_id + '/run',
+              url: '/users/' + humanapi_data[2].user_id + '/location',
               method: 'GET'
             }).done(function(data){
-              
-              var i;
-              $('body').append("<ul></ul>")
-              for (i=0; i<data.length; i++) {
-                $('ul').append("<li>" + data[i].distance + "</li><li>" + data[i].startTime + "</li><li>" + data[i].endTime + '</li>')
-              }
-              
+              $('.step_data').remove()
+                  var i;
+                  $('body').append("<ul class='location_data'></ul>")
+                  
+                  for (i=0; i<data.length; i++) {
+                      $('ul').append("<li>" + data[i].name + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
+                  }   
+            })
+          })
 
-          })
-          })
           
-}
+ }
 </script>
 
+ 

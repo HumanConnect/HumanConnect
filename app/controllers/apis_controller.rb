@@ -23,28 +23,21 @@ class ApisController < ApplicationController
 		
 	end
 
-	def run
-
+	def step
 		user = User.find_by(id: params[:id].to_i)
-		
 		result = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
-
 		result_json = result.to_json
-
 		render json: result_json
 
 	end
 
+	def location
+		user = User.find_by(id: params[:id].to_i)
+		result = HTTParty.get("https://api.humanapi.co/v1/human/locations?access_token=#{user.accesstoken}")
+		result_json = result.to_json
+		render json: result_json
 
-
-		## set variable equal to the array of hashes of activity data
-
-		# test_data = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{accessToken}")
-
-		# test_data2 = test_data.to_json
-
-		# render json: test_data2
-
+	end
 
 
 end
