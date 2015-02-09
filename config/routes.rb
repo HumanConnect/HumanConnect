@@ -35,6 +35,12 @@ Rails.application.routes.draw do
 
   get '/users/:id/today' => 'users#today'
 
+  get '/users/:id/follows' => 'follows#show'
+
+  put '/users/:id/follows' => 'follows#update'
+
+  post '/users/:id/users/:id2/follow' => 'follows#create'
+
 
   
 

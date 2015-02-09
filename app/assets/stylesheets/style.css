@@ -161,7 +161,7 @@ a:hover {
 		cursor: pointer;
 		height: 15%;
 		width: 100%;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		text-align: center;
 		padding: 5;
 	}
@@ -175,23 +175,12 @@ a:hover {
 			font-size: 1.5em;
 		}
 
-		.user_info_sidebar .follow_requests_placeholder {
-			position: absolute;
-			height: 20%;
-			width: 20%;
-			left: 40%;
-			bottom: 0;
-			color: white;
-			background-color: blue;
-		}
-
-
 	.person_you_follow {
 		position: relative;
 		margin-top: 5px;
 		height: 50px;
 		width: 100%;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 	}
 
 	.person_you_follow:hover {
@@ -220,7 +209,10 @@ a:hover {
 
 
 
-/* -----------------  USER DATA -----------------------------*/
+/* -----------------  MAIN SECTION / USER DATA -----------------------------*/
+
+
+
 
 
 .data_container {
@@ -237,18 +229,50 @@ a:hover {
 }
 
 	.today_title{
+		color: #A6A9AC;
 		position: absolute;
+		font-family: "Andale Mono";
 		margin-left: 20%;
 		font-size: 1.75em;
-		top: .5%;
+		top: 1%;
 	}
 
 	.my_account_toggle {
+		color: #A6A9AC;
 		position: absolute;
 		cursor: pointer;
 		right: 10px;
-		top: 10px;
+		top: 1.5%;
 	}
+	.follow_requests {
+		color: #A6A9AC;
+		position: absolute;
+		cursor: pointer;
+		right: 100px;
+		top: 1.5%;
+	}
+		.follow_requests_count{
+			color: #A6A9AC;
+		}
+
+		.follow_requests_dropdown{
+			position: absolute;
+			top: 35px;
+			right: 100px;
+			z-index: 2;
+			border-radius: 8px;
+			/*border: 1px solid black;*/
+			background-color: #3E50B4;
+			
+			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+			box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+		}
+			.follow_requests_dropdown li{
+				color: white;
+				padding: 10px;
+				border: 1px solid white;
+			}
 
 		.my_account_options {
 			display: none;
@@ -257,7 +281,7 @@ a:hover {
 			right: 10px;
 			z-index: 2;
 			border-radius: 8px;
-			border: 1px solid black;
+			/*border: 1px solid black;*/
 			background-color: #3E50B4;
 			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
 			-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
@@ -268,7 +292,7 @@ a:hover {
 				color: white;
 				display: block;
 				padding: 10px;
-				border-bottom: 1px solid black;
+				/*border-bottom: 1px solid black;*/
 				cursor: pointer;
 			}
 
@@ -291,10 +315,10 @@ a:hover {
 	.today_summary {
 		position: absolute;
 		margin-left: 20%;
-		top: 5%;
+		top: 8%;
 		width: 70%;
 		height: 20%;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		border-radius: 5px;
 		background-color: #FBFBFB;
 	}
@@ -310,7 +334,7 @@ a:hover {
 				position: absolute;
 				width: 32.5%;
 				height: 100%;
-				border: 1px solid yellow;
+				/*border: 1px solid yellow;*/
 			}
 				.today_metric_wrapper {
 					position: absolute;
@@ -319,19 +343,31 @@ a:hover {
 					top: 15%;
 					left: 15%;
 					text-align: center;
-					border: 1px solid black;
+					/*border: 1px solid black;*/
 				}
 					.today_metric {
 						font-size: 4em;
+						font-family: "Andale Mono";
+						color: #3E50B4;
 					}
-					
+
+					.today_metric_title {
+						color: #A6A9AC;
+						letter-spacing: 1px;
+						font-weight: bold;
+					}
+			#connect-health-data-btn {
+				display:none;
+			}
+
+
 
 			.today_meals{
 				position: absolute;
 				left: 33%;
 				height: 100%;
 				width: 32.5%;
-				border: 1px solid yellow;
+				/*border: 1px solid yellow;*/
 				text-align: center;
 			}
 
@@ -340,7 +376,7 @@ a:hover {
 				left: 66%;
 				height: 100%;
 				width: 32.5%;
-				border: 1px solid yellow;
+				/*border: 1px solid yellow;*/
 				text-align: center;
 			}
 
@@ -349,8 +385,8 @@ a:hover {
 		margin-left: 20%;
 		top: 30%;
 		width: 70%;
-		height: 60%%;
-		border: 1px solid black;
+		height: 60%;
+		/*border: 1px solid black;*/
 	}
 
 
@@ -363,7 +399,7 @@ a:hover {
 		top: 10%;
 		width: 70%;
 		height: 70%;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		border-radius: 5px;
 		background-color: #FBFBFB;
 	}
@@ -372,7 +408,7 @@ a:hover {
 		display: inline-block;
 		width: 49%;
 		height: 100%;
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 	}
 
 	.form_wrapper {
@@ -395,7 +431,7 @@ a:hover {
 			padding-left: 10px;
 			color: black;
 			width: 100%;
-			border: 1px solid #3E50B4;
+			/*border: 1px solid #3E50B4;*/
 			border-radius: 10px;
 			display: block;
 		}

@@ -44,13 +44,56 @@ console.log("loaded")
 
 // ------------ User Follow/ Invite Request--------------------//
 
-        $('.follows').on('click', '.link_to_user', function(event) {
-          $.ajax({
-            url: '/users/' + humanapi_data[2].user_id + '/users/'
-          })
-
+        // 
+        $('.follows').on('click','.link_to_user',function(event){
+              $.ajax({
+                url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id +'/follow', 
+                method: 'POST'
+              }).done(function(data){
+                  if (data.status === "error") {
+                    alert("You already requested to follow them.")
+                  } else if (data.status === "success") {
+                    alert("Follow request sent. You can access their data when they aceept your request.")
+                  }
+              })
         })
 
+        // 
+
+        $.ajax({
+            url: '/users/' + humanapi_data[2].user_id + '/follows',
+            method: 'GET'
+          }).done(function(data){
+              $('.follow_requests_count').text(data.count.toString())
+              var i;
+              for (i=0; i < data.follow_array.length; i++) {
+                $('.follow_request_options').append('<li id="'+data.follow_array[i].id+'">' + data.follow_array[i].fname +'<button>Yes</button><button>No</button></li>')
+              }
+            }
+          )
+
+
+          // follow request dropdown functionality
+
+          $('.follow_request_options').on('click', function(event){
+              var response = event.target.innerHTML;
+              var from_user_id = event.target.parentElement.id
+              if (event.target.tagName === "LI" || event.target.tagName === "UL") { console.log('Click a button instead')
+
+              } else {
+                  event.target.parentElement.remove()
+                  $.ajax({
+                    url: '/users/' + humanapi_data[2].user_id + '/follows',
+                    method: 'PUT',
+                    data: {response: response, from_user: from_user_id}
+                  }).done(function(data){
+                      console.log("Response: " + data.params.response)
+                      var new_count = parseInt($('.follow_requests_count').text())-1
+                      $('.follow_requests_count').text(new_count.toString())
+                  })
+              }
+           
+            })
 
 
 

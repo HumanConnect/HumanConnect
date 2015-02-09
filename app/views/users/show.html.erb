@@ -1,9 +1,9 @@
 
-<div class="sidebar">
+	<div class="sidebar">
 		<div class="user_info_sidebar">
 			<img src="http://api.randomuser.me/0.2/portraits/men/20.jpg" class="img-circle">
 			<p><%=user.fname%></p>
-			<div class="follow_requests_placeholder">3</div>
+			
 		</div>
 		<ul class="follows">
 			<!-- <div class="person_you_follow">
@@ -18,9 +18,19 @@
 		</ul>
 	</div>
 
+
+
 	<div class="data_container">
 		
 		<span class="today_title">Today</span>
+		
+		<span class="follow_requests">Requests: <span class="follow_requests_count"></span></span>
+			<div class="follow_requests_dropdown">
+				<ul class="follow_request_options">
+					<!-- list items added by javascript -->
+				</ul>
+			</div>
+
 		<span class="my_account_toggle">My Account</span>
 			<div class="my_account_options" style:"display:none">
 				<ul>
