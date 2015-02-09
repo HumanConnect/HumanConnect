@@ -19,7 +19,7 @@
 //= require jquery_ujs
 //= require scripts
 //= require bootstrap
-//= require counterup
+
 
 
 
