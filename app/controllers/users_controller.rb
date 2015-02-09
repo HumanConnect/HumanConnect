@@ -45,11 +45,12 @@ class UsersController < ApplicationController
 	def today
 		user= User.find_by(id: params[:id].to_i)
 		
-		### steps ####
+		### steps ####--------------------------------
 
 		steps = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
 		today_steps = steps.map do |a|
-			if Date.parse(a["startTime"]).day == Time.now.day  
+			## this is setup to check for yesterday right now
+			if Date.parse(a["startTime"]).day == Time.now.day-1  
 				a["steps"]
 			else
 			end
@@ -58,11 +59,12 @@ class UsersController < ApplicationController
 		today_total = today_steps.inject {|sum, n| sum + n}
 		today_steps_json = today_total.to_json
 
-		### locations ####
+		### locations ####--------------------------------
 
 		locations = HTTParty.get("https://api.humanapi.co/v1/human/locations?access_token=#{user.accesstoken}")
 		today_locations = locations.map do |a|
-			if Date.parse(a["startTime"]).day == Time.now.day  
+			## this is setup to check for yesterday right now
+			if Date.parse(a["startTime"]).day == Time.now.day-1  
 				a
 			else
 			end

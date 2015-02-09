@@ -22,6 +22,20 @@ class FollowsController < ApplicationController
 			end
 
 		render json: {count: follows.length, follow_array: user_array}
+	end
+
+	def update
+		follow = Follow.find_by("to_user_id = ? AND from_user_id = ? ", params['id'].to_i, params['from_user'].to_i)
+		
+		if params['response'] == "Yes"
+			follow.update(accepted: true)
+			follow.save()
+		elsif params['response'] == "No"
+			follow.update(accepted: false)
+			follow.save()
+		end
+
+		render json: {params: params}
 
 	end
 

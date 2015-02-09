@@ -14,7 +14,7 @@ class ApisController < ApplicationController
 			:body => sessionTokenObject.to_json, 
 			:headers => {'Content-Type' => 'application/json', 'Accept' => 'application/json'}
 			})
-
+		binding.pry
 		## find user by params id from the client, then save the access token, public token, and humanId to the profile
 		
 		users = User.find_by(id: user_id)
