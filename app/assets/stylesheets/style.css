@@ -1,0 +1,435 @@
+body, h1, h2, h3, ul, li {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font-family: "Avenir Next";
+	color: white;
+
+}
+
+body {
+	background-color: black;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+
+
+/* -----------------  LOGIN -----------------------------*/
+
+.login {
+	position: absolute;
+	background: url(../assets/login_background.gif);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 100%;
+}
+
+.darken {
+	position: fixed;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login_modal {
+	position: absolute;
+	z-index: 2;
+	height: 50%;
+	width: 40%;
+	left: 30%;
+	top: 25%;
+	/*border: 1px solid yellow;*/
+	border-radius: 5px;
+	padding: 5px;
+	background-color: rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1);
+	box-shadow: 3px 3px 2px 0px rgba(0,0,0,1);
+}
+	.login_modal_header {
+		position: relative;
+		text-align: center;
+		height: 50%;
+		width: 100%;
+		/*background-color: blue;*/
+		overflow: hidden;
+	}
+
+		.login_modal_header_logo {
+			background: url(../assets/human_connect.png);
+			margin: auto;
+			margin-top: 20px;
+			height: 20%;
+			max-height: 200px;
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			margin-bottom: 50px;
+		}
+
+		.login_modal_header_text {
+			position: absolute;
+			font-size: .9em;
+			color: #799AE1;
+			left: 25%;
+			width: 50%;
+		}
+	.login_form_body{
+		position: absolute;
+		width: 50%;
+		left: 25%;
+	}
+
+	.error_message p{
+		color: #D0021B;
+	}
+
+		.login_form input{
+			background: transparent;
+			text-align: center;
+			height: 30px;
+			margin-top:20px; 
+			font-size: .9em;
+			padding-left: 10px;
+			color: white;
+			width: 100%;
+			border: 1px solid #3E50B4;
+			border-radius: 10px;
+			display: block;
+		}
+		.login_modal button{
+			margin-top: 20px;
+			margin-left: 25%;
+			width: 50%;
+			height: 30px;
+			color: white;
+			background-color: #3E50B4;
+			border: none;
+			border-radius: 5px;
+			-webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1);
+			box-shadow: 3px 3px 2px 0px rgba(0,0,0,1);
+		}
+
+		.login_form button:hover {
+			background-color: #4D60C8;
+		}
+
+
+	.login_form_footer {
+		position: absolute;
+		bottom: 5px;
+		right: 5px;
+	}
+
+	.login_form_footer a{
+		color: white;
+	}
+
+
+
+
+/* -----------------  SIDEBAR -----------------------------*/
+
+.sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	width: 13%;
+	height: 100%;
+	background-color: #3E50B4;
+	-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+	-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+	box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+}
+
+
+	.user_info_sidebar {
+		position: relative;
+		cursor: pointer;
+		height: 15%;
+		width: 100%;
+		border: 1px solid black;
+		text-align: center;
+		padding: 5;
+	}
+
+		.user_info_sidebar img {
+			margin-top: 10px;
+			max-height: 50%;
+		}
+
+		.user_info_sidebar p {
+			font-size: 1.5em;
+		}
+
+		.user_info_sidebar .follow_requests_placeholder {
+			position: absolute;
+			height: 20%;
+			width: 20%;
+			left: 40%;
+			bottom: 0;
+			color: white;
+			background-color: blue;
+		}
+
+
+	.person_you_follow {
+		position: relative;
+		margin-top: 5px;
+		height: 50px;
+		width: 100%;
+		border: 1px solid black;
+	}
+
+	.person_you_follow:hover {
+		background-color: #4D60C8;
+	}
+
+		.person_you_follow img{
+			height: 80%;
+			margin: 5px;
+			display: inline;
+		}
+
+		.person_you_follow li{
+			margin-left: 5px;
+			display: inline;
+		}
+
+		.person_you_follow .link_to_user {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			cursor: pointer;
+		}
+
+
+
+/* -----------------  USER DATA -----------------------------*/
+
+
+.data_container {
+	position: absolute;
+	color: #1D242E;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+}
+
+.data_container * {
+	color: #1D242E;
+	/*display: none;*/
+}
+
+	.today_title{
+		position: absolute;
+		margin-left: 20%;
+		font-size: 1.75em;
+		top: .5%;
+	}
+
+	.my_account_toggle {
+		position: absolute;
+		cursor: pointer;
+		right: 10px;
+		top: 10px;
+	}
+
+		.my_account_options {
+			display: none;
+			position: absolute;
+			top: 35px;
+			right: 10px;
+			z-index: 2;
+			border-radius: 8px;
+			border: 1px solid black;
+			background-color: #3E50B4;
+			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+			box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+
+		}
+			.my_account_options li {
+				color: white;
+				display: block;
+				padding: 10px;
+				border-bottom: 1px solid black;
+				cursor: pointer;
+			}
+
+			.my_account_options li:hover{
+				background-color: #4D60C8;
+			}
+
+			.my_account_options li:last-child {
+				border-bottom: none;
+			}
+
+			.my_account_options .logout_button {
+				background: transparent;
+				border: none;
+				color: white;
+				padding: 0;
+				width: 100%;
+			}
+
+	.today_summary {
+		position: absolute;
+		margin-left: 20%;
+		top: 5%;
+		width: 70%;
+		height: 20%;
+		border: 1px solid black;
+		border-radius: 5px;
+		background-color: #FBFBFB;
+	}
+
+		.today_summary_wrapper{
+			position: relative;
+			height: 100%;
+			width: 100%;
+			/*background-color: blue;*/
+		}
+
+			.today_steps{
+				position: absolute;
+				width: 32.5%;
+				height: 100%;
+				border: 1px solid yellow;
+			}
+				.today_metric_wrapper {
+					position: absolute;
+					width: 70%;
+					height: 70%;
+					top: 15%;
+					left: 15%;
+					text-align: center;
+					border: 1px solid black;
+				}
+					.today_metric {
+						font-size: 4em;
+					}
+					
+
+			.today_meals{
+				position: absolute;
+				left: 33%;
+				height: 100%;
+				width: 32.5%;
+				border: 1px solid yellow;
+				text-align: center;
+			}
+
+			.today_locations{
+				position: absolute;
+				left: 66%;
+				height: 100%;
+				width: 32.5%;
+				border: 1px solid yellow;
+				text-align: center;
+			}
+
+	.user_data_wrapper {
+		position: absolute;
+		margin-left: 20%;
+		top: 30%;
+		width: 70%;
+		height: 60%%;
+		border: 1px solid black;
+	}
+
+
+/* -----------------  MY ACCOUNT -----------------------------*/
+
+	.my_account_section {
+		display: none;
+		position: absolute;
+		margin-left: 20%;
+		top: 10%;
+		width: 70%;
+		height: 70%;
+		border: 1px solid black;
+		border-radius: 5px;
+		background-color: #FBFBFB;
+	}
+
+	.my_account_section section{
+		display: inline-block;
+		width: 49%;
+		height: 100%;
+		border: 1px solid black;
+	}
+
+	.form_wrapper {
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+
+	.form_wrapper form{
+		position: absolute;
+		width: 80%;
+		left: 5%;
+	}
+
+	.form_wrapper input{
+			background: transparent;
+			height: 30px;
+			margin-top:20px; 
+			font-size: .9em;
+			padding-left: 10px;
+			color: white;
+			width: 100%;
+			border: 1px solid #3E50B4;
+			border-radius: 10px;
+			display: block;
+		}
+		.form_wrapper button{
+			margin-top: 20px;
+			margin-left: 25%;
+			width: 50%;
+			height: 30px;
+			color: white;
+			background-color: #3E50B4;
+			border: none;
+			border-radius: 5px;
+			-webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+			-moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+			box-shadow: 1px 1px 1px 0px rgba(0,0,0,1);
+		}
+
+			.form_wrapper button:hover {
+				background-color: #4D60C8;
+			}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

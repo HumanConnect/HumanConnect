@@ -1,22 +1,37 @@
-<% if @error == true %>
-<h2>Sorry! Incorrect log-in information. Try again.</h2>
-<% end %>
 
 
+<div class="login">
+	
 
-Log In
-<form action="/session" method="POST">
-	Email
-		<input type="text" name="email"> 
-	Password
-		<input type="text" name="password">
-		<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-		<input type="submit"> 
-</form>
+			<div class="login_modal">
+				<div class="login_modal_header">
+					<div class="login_modal_header_logo"></div>
+						<span class="login_modal_header_text">HUMAN CONNECT IS NOW OPEN FOR PRIVATE BETA. LOG IN TO EXPLORE THE WORLD'S HUMAN DATA, OR SIGN UP TO REQUEST ACCESS.
+						</span>
+				</div>
 
-<a href="/users/new">Sign Up</a>
+				<div class="login_form_body">
+					<div class="error_message">
+						<% if @error == true %>
+						<p>Try again... </p>
+						<% end %>
+					</div>
+					<form class="login_form" action="/session" method="POST">
+							<input type="text" name="email" placeholder="EMAIL"> 
+							<input type="text" name="password" placeholder="PASSWORD">
+							<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+							<button>ENTER</button> 
+					</form>
+				</div>
+			
+				<div class="login_form_footer">
+					<a href="/users/new">Sign Up</a>
+				</div>
 
+			</div>
+</div>
 
+<div class="darken"><div>
 
 
 

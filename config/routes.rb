@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   post '/session' => 'session#create'
 
+  delete '/session' => 'session#destroy'
+
   #get '/register' => 
 
   get '/users/new' => 'users#new'
@@ -23,11 +25,18 @@ Rails.application.routes.draw do
 
   get '/users/:id' => 'users#show'
 
-  get '/users/:id' => 'users#show'
+  put '/users/:id' => 'users#update'
+
+  get '/users/:id/all' => 'users#all'
 
   get '/users/:id/step' => 'apis#step'
 
   get '/users/:id/location' => 'apis#location'
+
+  get '/users/:id/today' => 'users#today'
+
+
+  
 
 
 

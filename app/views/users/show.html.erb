@@ -1,103 +1,126 @@
 
-<button class="btn step">step</button>
-<button class="btn meals">meals</button>
-<button class="btn location">location</button>
+<div class="sidebar">
+		<div class="user_info_sidebar">
+			<img src="http://api.randomuser.me/0.2/portraits/men/20.jpg" class="img-circle">
+			<p><%=user.fname%></p>
+			<div class="follow_requests_placeholder">3</div>
+		</div>
+		<ul class="follows">
+			<!-- <div class="person_you_follow">
+				<img src="./photo.jpg" class="img-circle">
+				<li>Jim</li>
+				<a href="" class="link_to_user"></a>
+			</div> -->
+			
+		</ul>
+		<ul class="unfollowed">
+			<a><li></li></a>
+		</ul>
+	</div>
 
+	<div class="data_container">
+		
+		<span class="today_title">Today</span>
+		<span class="my_account_toggle">My Account</span>
+			<div class="my_account_options" style:"display:none">
+				<ul>
+					<li class="update_account">Update Account</li>
+					<li class="edit_health_data">Edit Health Data</li>
+					<li class="logout">
+						<form method="POST" action="/session">
+  							<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+  							<input name="_method" value="DELETE" type="hidden">
+						  <button class="logout_button">Logout</button>  
+						</form>
+					</li>
+				</ul>
+			</div>
 
-<script src='https://connect.humanapi.co/connect.js'></script>
+		<div class="today_summary">
+			<div class="today_summary_wrapper">
+				
+				<div class="today_steps">
+					<div class="today_metric_wrapper">
+						<span class="today_metric" id="today_steps">0</span>
+						<span class="today_metric_title"><br>STEPS</span>
+					</div>
+				</div>
+				<div class="today_meals">
+					<div class="today_metric_wrapper">
+						<span class="today_metric">3</span>
+						<span class="today_metric_title"><br>MEALS</span>
+					</div>
+				</div>
+				<div class="today_locations">
+					<div class="today_metric_wrapper">
+						<span class="today_metric" id="today_locations">0</span>
+						<span class="today_metric_title"><br>LOCATIONS</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="user_data_wrapper">
+			<div class="row user_data_title">
+			
+				<script src='https://connect.humanapi.co/connect.js'></script>
+				<img id='connect-health-data-btn' src='https://connect.humanapi.co/assets/button/blue.png'/>
+			</div>
+			<div class="user_data">
+				<div class="steps">
+					<button class="btn step">step</button>
+					<button class="display_data">Display</button>
+				</div>
+				<div class="meals">
+					<button class="btn meals">meals</button>
+				</div>
+				<div class="locations">
+					<button class="btn location">location</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
-<img id='connect-health-data-btn' src='https://connect.humanapi.co/assets/button/blue.png'/>
+	<div class="my_account_section">
+		<section class="my_account_section_update">
+			<div class="form_wrapper">
+				<form action="/users/<%=user.id%>" method="POST">
+					<input type="hidden" name="_method" value="put">
+					<input type="text" name="fname" placeholder=<%=user.fname%> value=<%=user.fname%>> 
+					<input type="text" name="lname" placeholder=<%=user.lname%> value=<%=user.lname%>> 
+					<input type="text" name="email" placeholder=<%=user.email%> value=<%=user.email%>> 
+					<input type="text" name="password" placeholder="*******" disabled>
+					<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+					<button type="submit">Save</button>  
+				</form>
+			</div>
+		</section>
+		<section class="my_account_section_follows">
+		</section>
 
-<button class="display_data">Display</button>
-
+	</div>
 
 <script> var humanapi_data = <%=raw(humanapi_data.to_json)%> </script>
 
-<!--<script>
 
 
-window.onload = function() {
-            
-            // for all data just sent from server
-            var humanapi_data = <%=raw(humanapi_data.to_json)%>
-            var connectBtn = document.getElementById('connect-health-data-btn');
-            
-        
-            connectBtn.addEventListener('click', function(e) {
-             
-              var option1 = {
-                      clientId: humanapi_data[3].clientId,
-                      // can be email or any other internal id of the user in your system
-                      clientUserId: humanapi_data[5].email,
-                      finish: function(err, sessionTokenObject) {
-                      	console.log(sessionTokenObject)
-                  
-                          	$.ajax({
-                          		url: '/apis/query',
-                          		method: 'POST',
-                          		data: {sessionTokenObject: sessionTokenObject, client_secret: humanapi_data[4].client_secret, user_id: humanapi_data[2].user_id}
-                          	}).done(function(data){})
-                      },
-                      close: function() {
-                        // do something here when user just closed popup
-                        // `close` callback function is optional
-                      }
-              };
-
-              var option2 = {
-                    publicToken: humanapi_data[0].publicToken, 
-                    clientUserId: encodeURIComponent(humanapi_data[5].email), 
-                    close: function() {
-                      // optional callback that will be called if the user closes the popup 
-                      // without connecting any data sources.
-                    },
-                    error: function(err) {
-                      // optional callback that will be called if an error occurs while 
-                      // loading the popup.
-                      
-                      // `err` is an object with the fields: `code`, `message`, `detailedMessage`
-                     } 
-              }
-
-              if (humanapi_data[0].publicToken == null) {
-                    HumanConnect.open(option1);
-              } else {
-                HumanConnect.open(option2);
-             }
-          
-            });
 
 
-          $('.display_data').on('click', function() {
-              $.ajax({
-                url: '/users/' + humanapi_data[2].user_id + '/step',
-                method: 'GET'
-              }).done(function(data){
-                  var i;
-                  $('body').append("<ul class='step_data'></ul>")
-                        for (i=0; i<data.length; i++) {
-                          $('ul').append("<li>" + data[i].distance + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
-                        }   
-              })
-          })
 
-          $('.location').on('click', function() {
-            $.ajax({
-              url: '/users/' + humanapi_data[2].user_id + '/location',
-              method: 'GET'
-            }).done(function(data){
-              $('.step_data').remove()
-                  var i;
-                  $('body').append("<ul class='location_data'></ul>")
-                  
-                  for (i=0; i<data.length; i++) {
-                      $('ul').append("<li>" + data[i].name + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
-                  }   
-            })
-          })
 
-          
- }
-</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
  
