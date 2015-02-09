@@ -10,7 +10,7 @@ console.log("loaded")
           }).done(function(data){
               var i;
               for (i=0; i < data.length; i++) {
-                $('.follows').append('<div class="person_you_follow"><img src="http://api.randomuser.me/0.2/portraits/men/20.jpg" class="img-circle"><li>' + data[i].fname + '</li><div class="link_to_user" id="link_to_' + data[i].id + '"></div></div>')
+                $('.follows').append('<div class="person_you_follow"><img src="http://api.randomuser.me/0.2/portraits/men/20.jpg" class="img-circle"><li>' + data[i].fname + '</li><div class="link_to_user" id="' + data[i].id + '"></div></div>')
               }
           })
 // ------------ "TODAY" STEPS AND LOCATION DATA --------------------//
@@ -44,14 +44,12 @@ console.log("loaded")
 
 // ------------ User Follow/ Invite Request--------------------//
 
-        $('.follow').click(follow_request())
-      
+        $('.follows').on('click', '.link_to_user', function(event) {
+          $.ajax({
+            url: '/users/' + humanapi_data[2].user_id + '/users/'
+          })
 
-
-        function follow_request() {
-          debugger
-        }
-
+        })
 
 
 
