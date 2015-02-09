@@ -9,4 +9,21 @@ class FollowsController < ApplicationController
 		end
 	end
 
+	def show
+		follows = Follow.where("to_user_id = ? AND accepted IS ? ", params['id'].to_i, nil)
+		requests_from_ids = follows.map {|follow| follow.from_user_id}
+		user_array = []
+			User.all.each do |user|
+				requests_from_ids.each do |id|
+					if user.id == id
+						user_array.push(user)
+					end
+				end
+			end
+
+		render json: {count: follows.length, follow_array: user_array}
+
+	end
+
+
 end
