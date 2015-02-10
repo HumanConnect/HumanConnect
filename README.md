@@ -1,8 +1,8 @@
 # humanconnect2
-<strong>HumanConnet</strong><br>
+<strong>HumanConnect</strong><br>
 HumanConnect allows users to see their health and wellness data
 by connecting their wellness devices, apps and services. Through the use of visual data, users can see their desired breakdown<br>
-<strong>HumanConnet</strong><br>
+<strong>HumanConnect</strong><br>
 Team Members
 1. Logan
 2. Ivette
