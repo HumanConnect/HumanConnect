@@ -17,9 +17,10 @@
 
 //= require jquery
 //= require jquery_ujs
+
+//= require graph
 //= require scripts
 //= require bootstrap
-//= require graph
 //= require underscore
 //= require gmaps/google
 

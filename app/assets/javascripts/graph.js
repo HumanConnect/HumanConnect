@@ -14,7 +14,7 @@ var yScale = d3.scale.linear()
 .range([0, h-15]); //how much we are letting the container fill 
 
 //Create SVG element
-var svg = d3.select("body")
+var svg = d3.select(".steps")
   .append("svg")
   .attr("width", w)
   .attr("height", h);

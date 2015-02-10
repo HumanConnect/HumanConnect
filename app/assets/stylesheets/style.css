@@ -363,6 +363,7 @@ a:hover {
 		}
 
 		.follow_requests_dropdown{
+			display: none;
 			position: absolute;
 			top: 35px;
 			right: 100px;
@@ -378,7 +379,7 @@ a:hover {
 			.follow_requests_dropdown li{
 				color: white;
 				padding: 10px;
-				border: 1px solid white;
+				
 			}
 
 		.my_account_options {
@@ -462,6 +463,7 @@ a:hover {
 						color: #A6A9AC;
 						letter-spacing: 1px;
 						font-weight: bold;
+						cursor: pointer;
 					}
 			#connect-health-data-btn {
 				display:none;

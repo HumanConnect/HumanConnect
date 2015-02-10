@@ -1,6 +1,6 @@
 console.log("loaded")
 
-document.ready(function(){
+$(document).ready(function(){
             
 // ------------ PULL ALL USERS FOR SIDEBAR --------------------//
 
@@ -45,8 +45,9 @@ document.ready(function(){
 // ------------ My Account and Main User Page Toggle --------------------//
 
           $('.my_account_toggle').on('click', function(){
-            $('.my_account_options').toggle("slow", function(){
-            }); 
+            $('.my_account_options').slideToggle("fast", function(){
+            });
+            $('.follow_requests_dropdown').hide()
           })
           
           $('.update_account').on('click', function() {
@@ -59,29 +60,36 @@ document.ready(function(){
 
         // 
         $('.follows').on('click','.link_to_user',function(event){
-              //need if statement -- ajax using target to check really quickly then if between other two ajax calls
-
+              item_clicked = event.target
+              debugger
               $.ajax({
-                url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id + '/show',
+                url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id + '/follow',
                 method: 'GET'
               }).done(function(data){
-                $('#today_steps').text(data.today_steps)
-                $('#today_locations').text(data.today_locations)
+             
+                if (data.can_they_view_users_page === true) {
+                      $.ajax({
+                        url: '/users/' + humanapi_data[2].user_id + '/users/' + item_clicked.id + '/show',
+                        method: 'GET'
+                      }).done(function(data){
+                        $('#today_steps').text(data.today_steps)
+                        $('#today_locations').text(data.today_locations)
+                        })
+
+                } else if (data.can_they_view_users_page === false) {
+                    $.ajax({
+                      url: '/users/' + humanapi_data[2].user_id + '/users/' + item_clicked.id +'/follow', 
+                      method: 'POST'
+                    }).done(function(data){
+                      if (data.status === "error") {
+                        alert("You already requested to follow them.")
+                      } else if (data.status === "success") {
+                        alert("Follow request sent. You can access their data when they accept your request.")
+                      }
+                  })
+                }
               })
-
-
-
-              // $.ajax({
-              //   url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id +'/follow', 
-              //   method: 'POST'
-              // }).done(function(data){
-              //     if (data.status === "error") {
-              //       alert("You already requested to follow them.")
-              //     } else if (data.status === "success") {
-              //       alert("Follow request sent. You can access their data when they aceept your request.")
-              //     }
-              // })
-        })
+          })
 
         // 
 
@@ -99,6 +107,11 @@ document.ready(function(){
 
 
           // follow request dropdown functionality
+
+          $('.follow_requests').on('click', function() {
+            $('.follow_requests_dropdown').slideToggle('fast');
+             $('.my_account_options').hide();
+          })
 
           $('.follow_request_options').on('click', function(event){
               var response = event.target.innerHTML;
@@ -121,52 +134,46 @@ document.ready(function(){
             })
 
 
-
-
-
-
-
-
-
 // ------------ Stuff that should be trashed --------------------//     
 
-          $('.display_data').on('click', function() {
-              $.ajax({
-                url: '/users/' + humanapi_data[2].user_id + '/step',
-                method: 'GET'
-              }).done(function(data){
-                  var i;
-                  $('body').append("<ul class='step_data'></ul>")
-                        for (i=0; i<data.length; i++) {
-                          $('ul').append("<li>" + data[i].distance + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
-                        }   
-              })
-          })
+          // $('.display_data').on('click', function() {
+          //     $.ajax({
+          //       url: '/users/' + humanapi_data[2].user_id + '/step',
+          //       method: 'GET'
+          //     }).done(function(data){
+          //         var i;
+          //         $('body').append("<ul class='step_data' style='display: none'></ul>")
+          //               for (i=0; i<data.length; i++) {
+          //                 $('ul').append("<li>" + data[i].distance + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
+          //               }   
+          //     })
+          // })
 
-          $('.location').on('click', function() {
-            $.ajax({
-              url: '/users/' + humanapi_data[2].user_id + '/location',
-              method: 'GET'
-            }).done(function(data){
-              $('.step_data').remove()
-                  var i;
-                  $('body').append("<ul class='location_data'></ul>")
+          // $('.location').on('click', function() {
+          //   $.ajax({
+          //     url: '/users/' + humanapi_data[2].user_id + '/location',
+          //     method: 'GET'
+          //   }).done(function(data){
+          //     $('.step_data').remove()
+          //         var i;
+          //         $('body').append("<ul class='location_data' style='display:none'></ul>")
                   
-                  for (i=0; i<data.length; i++) {
-                      $('ul').append("<li>" + data[i].name + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
-                  }   
-            })
-          })
+          //         for (i=0; i<data.length; i++) {
+          //             $('ul').append("<li>" + data[i].name + ", " + data[i].startTime + ", " + data[i].endTime + '</li>')
+          //         }   
+          //   })
+          // })
 
 /// ----------------------D3 step graphs------------------////////
 
-         $('.display_data').on('click', function() {
+         $('.today_metric_title').on('click', function() {
            $.ajax({
              url: '/apis/' + humanapi_data[2].user_id + '/step',
              method: 'GET'
            }).done(function(data){
              var stepsData = data.map(function(i) { return i['steps']});
-             
+             debugger
+             $('.google_map').hide()
              drawBarGraph(stepsData)
 
          })
@@ -229,8 +236,8 @@ var directionsDisplay = new google.maps.DirectionsRenderer();
 var directionsService = new google.maps.DirectionsService();
 
     function calcRoute() {
-       var origin      = new google.maps.LatLng(40.704522, -74.012232);
-       var destination = new google.maps.LatLng(40.715322, -74.009614);
+       var origin      = new google.maps.LatLng(40.712037, -73.962879);
+       var destination = new google.maps.LatLng(40.740039, -73.989959);
 
        var request = {
            origin:      origin,

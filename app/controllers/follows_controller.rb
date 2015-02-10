@@ -39,5 +39,16 @@ class FollowsController < ApplicationController
 
 	end
 
+	def check
+		follow = Follow.find_by("to_user_id = ? AND from_user_id = ? AND accepted = ?", params['id'].to_i, params['id2'].to_i, true)
+		if follow != nil
+			render json: {can_they_view_users_page: true}
+		else 
+			render json: {can_they_view_users_page: false}
+		end
+
+	end
+
+
 
 end
