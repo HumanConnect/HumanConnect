@@ -138,7 +138,114 @@ a:hover {
 	}
 
 
+/* -----------------  REGISTER -----------------------------*/
 
+.register { 
+    position: absolute; 
+    background: url(../assets/login_background.gif); 
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    width: 100%; 
+    height: 100%; 
+}
+
+.darken { 
+    position: fixed; 
+    z-index: 1; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.register_modal { 
+    position: absolute; 
+    z-index: 2; 
+    height: 55%; 
+    width: 40%; 
+    left: 30%; 
+    top: 25%; 
+    /*border: 1px solid yellow;*/ 
+    border-radius: 5px; 
+    padding: 5px; 
+    background-color: rgba(0, 0, 0, 0.8); 
+    -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1); 
+    -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1); 
+    box-shadow: 3px 3px 2px 0px rgba(0,0,0,1); 
+} 
+    .register_modal_header { 
+        position: relative; 
+        text-align: center; 
+        height: 25%; 
+        width: 100%; 
+        /*background-color: blue;*/ 
+        overflow: hidden; 
+    }
+
+        .register_modal_header_logo { 
+            background: url(../assets/human_connect.png); 
+            margin: auto; 
+            margin-top: 20px; 
+            height: 38%; 
+            max-height: 200px; 
+            background-repeat: no-repeat; 
+            background-size: contain; 
+            background-position: center; 
+            margin-bottom: 50px; 
+        }
+
+  
+    .register_form_body{ 
+        position: absolute; 
+        width: 50%; 
+        left: 25%; 
+    }
+
+    .error_message p{ 
+        color: #D0021B; 
+    }
+
+        .register_form input{ 
+            background: transparent; 
+            text-align: center; 
+            height: 30px; 
+            margin-top:20px; 
+            font-size: .9em; 
+            padding-left: 10px; 
+            color: white; 
+            width: 100%; 
+            border: 1px solid #3E50B4; 
+            border-radius: 10px; 
+            display: block; 
+        } 
+        .register_modal button{ 
+            margin-top: 20px; 
+            margin-left: 25%; 
+            width: 50%; 
+            height: 30px; 
+            color: white; 
+            background-color: #3E50B4; 
+            border: none; 
+            border-radius: 5px; 
+            -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1); 
+            -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,1); 
+            box-shadow: 3px 3px 2px 0px rgba(0,0,0,1); 
+        }
+
+        .login_form button:hover { 
+            background-color: #4D60C8; 
+        }
+
+
+    .register_form_footer { 
+        position: absolute; 
+        bottom: 5px; 
+        right: 5px; 
+    }
+
+    .register_form_footer a{ 
+        color: white; 
+    }
 
 /* -----------------  SIDEBAR -----------------------------*/
 

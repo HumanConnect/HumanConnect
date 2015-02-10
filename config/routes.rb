@@ -19,6 +19,9 @@ Rails.application.routes.draw do
 
   post '/apis/query' => 'apis#query'
 
+  get '/apis/step' => 'apis#step'
+  get '/apis/meal' => 'apis#meal'
+
   
 
   post '/users' => 'users#create'
@@ -40,6 +43,8 @@ Rails.application.routes.draw do
   put '/users/:id/follows' => 'follows#update'
 
   post '/users/:id/users/:id2/follow' => 'follows#create'
+
+  get '/users/:id/users/:id2/show' => 'users#othershow'
 
 
   

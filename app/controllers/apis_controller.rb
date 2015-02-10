@@ -39,6 +39,17 @@ class ApisController < ApplicationController
 
 	end
 
+	def meal
+
+        user = User.find_by(id: params[:id].to_i)
+        
+        result = HTTParty.get("https://api.humanapi.co/v1/human/food/meals?access_token=demo")
+        
+        result_json = result.to_json
+
+        render json: result_json
+
+    end
 
 end
 

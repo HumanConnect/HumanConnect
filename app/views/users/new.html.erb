@@ -1,12 +1,27 @@
-<form action="/users" method="POST">
-	First Name: 
-		<input type="text" name="fname"> 
-	Last Name: 
-		<input type="text" name="lname"> 
-	Email: 
-		<input type="text" name="email"> 
-	Password: 
-		<input type="text" name="password">
-		<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-		<input type="submit"> 
-</form>
+
+<div class="register">
+    
+    <div class="register_modal">
+        <div class="register_modal_header">
+            <div class="register_modal_header_logo"></div>
+            
+        </div>
+
+        <div class="register_form_body">
+            
+            <form class="register_form" action="/users" method="POST">
+                <input type="text" name="fname" placeholder="First Name">
+                <input type="text" name="lname" placeholder="Last Name">
+                <input type="text" name="email" placeholder="Email"> 
+                <input type="text" name="password" placeholder="Password">
+                <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+                <button>Sign Up</button> 
+            </form>
+        </div>
+        
+        
+
+    </div>
+</div>
+
+<div class="darken"><div>

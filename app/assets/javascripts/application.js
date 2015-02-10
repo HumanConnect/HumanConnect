@@ -19,6 +19,9 @@
 //= require jquery_ujs
 //= require scripts
 //= require bootstrap
+//= require graph
+//= require underscore
+//= require gmaps/google
 
 
 

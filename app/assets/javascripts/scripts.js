@@ -1,6 +1,6 @@
 console.log("loaded")
 
-
+document.ready(function(){
             
 // ------------ PULL ALL USERS FOR SIDEBAR --------------------//
 
@@ -23,11 +23,29 @@ console.log("loaded")
             $('#today_locations').text(data.today_locations)
             }
           )
+
+          $('.user_info_sidebar').on('click', function() {
+            $('.my_account_section').hide()
+            $('.today_summary, .user_data_wrapper, .today_title').show("blind")
+              $.ajax({
+              url: '/users/' + humanapi_data[2].user_id + '/today',
+              method: 'GET'
+            }).done(function(data){
+              $('#today_steps').text(data.today_steps)
+              $('#today_locations').text(data.today_locations)
+              }
+            )
+
+          })  
+
+
+
+
          
 // ------------ My Account and Main User Page Toggle --------------------//
 
           $('.my_account_toggle').on('click', function(){
-            $('.my_account_options').toggle("blind", function(){
+            $('.my_account_options').toggle("slow", function(){
             }); 
           })
           
@@ -35,27 +53,34 @@ console.log("loaded")
             $('.today_summary, .user_data_wrapper, .my_account_options, .today_title').hide()
             $('.my_account_section').show("slow")
           })
-
-          $('.user_info_sidebar').on('click', function() {
-            $('.my_account_section').hide()
-            $('.today_summary, .user_data_wrapper, .today_title').show("blind")
-
-          })     
+  
 
 // ------------ User Follow/ Invite Request--------------------//
 
         // 
         $('.follows').on('click','.link_to_user',function(event){
+              //need if statement -- ajax using target to check really quickly then if between other two ajax calls
+
               $.ajax({
-                url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id +'/follow', 
-                method: 'POST'
+                url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id + '/show',
+                method: 'GET'
               }).done(function(data){
-                  if (data.status === "error") {
-                    alert("You already requested to follow them.")
-                  } else if (data.status === "success") {
-                    alert("Follow request sent. You can access their data when they aceept your request.")
-                  }
+                $('#today_steps').text(data.today_steps)
+                $('#today_locations').text(data.today_locations)
               })
+
+
+
+              // $.ajax({
+              //   url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id +'/follow', 
+              //   method: 'POST'
+              // }).done(function(data){
+              //     if (data.status === "error") {
+              //       alert("You already requested to follow them.")
+              //     } else if (data.status === "success") {
+              //       alert("Follow request sent. You can access their data when they aceept your request.")
+              //     }
+              // })
         })
 
         // 
@@ -133,6 +158,21 @@ console.log("loaded")
             })
           })
 
+/// ----------------------D3 step graphs------------------////////
+
+         $('.display_data').on('click', function() {
+           $.ajax({
+             url: '/apis/' + humanapi_data[2].user_id + '/step',
+             method: 'GET'
+           }).done(function(data){
+             var stepsData = data.map(function(i) { return i['steps']});
+             
+             drawBarGraph(stepsData)
+
+         })
+         })
+
+
 
 /// ----------------------HUMAN API BUTTON ------------------////////
 
@@ -182,7 +222,36 @@ console.log("loaded")
           
             });
 
+/// ----------------------Google Map API ------------------////////
 
 
+var directionsDisplay = new google.maps.DirectionsRenderer();
+var directionsService = new google.maps.DirectionsService();
+
+    function calcRoute() {
+       var origin      = new google.maps.LatLng(40.704522, -74.012232);
+       var destination = new google.maps.LatLng(40.715322, -74.009614);
+
+       var request = {
+           origin:      origin,
+           destination: destination,
+           travelMode:  google.maps.TravelMode.WALKING
+    };
+ 
+       directionsService.route(request, function(response, status) {
+         if (status == google.maps.DirectionsStatus.OK) {
+           directionsDisplay.setDirections(response);
+         }
+       });
+      }
+
+    calcRoute();
+
+    var handler = Gmaps.build('Google');
+    handler.buildMap({ internal: {id: 'directions'}}, function(){
+     directionsDisplay.setMap(handler.getMap());
+    });
+
+})
           
  
