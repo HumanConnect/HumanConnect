@@ -31,6 +31,7 @@ $(document).ready(function(){
               url: '/users/' + humanapi_data[2].user_id + '/today',
               method: 'GET'
             }).done(function(data){
+              $('.today_title').text("My day thus far:")
               $('#today_steps').text(data.today_steps)
               $('#today_locations').text(data.today_locations)
               }
@@ -61,17 +62,17 @@ $(document).ready(function(){
         // 
         $('.follows').on('click','.link_to_user',function(event){
               item_clicked = event.target
-              debugger
+    
               $.ajax({
                 url: '/users/' + humanapi_data[2].user_id + '/users/' + event.target.id + '/follow',
                 method: 'GET'
               }).done(function(data){
-             
                 if (data.can_they_view_users_page === true) {
                       $.ajax({
                         url: '/users/' + humanapi_data[2].user_id + '/users/' + item_clicked.id + '/show',
                         method: 'GET'
                       }).done(function(data){
+                        $('.today_title').text(data.user.fname + "'s day thus far:")
                         $('#today_steps').text(data.today_steps)
                         $('#today_locations').text(data.today_locations)
                         })

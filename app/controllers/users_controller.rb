@@ -48,40 +48,43 @@ class UsersController < ApplicationController
 		### steps ####--------------------------------
 
 		steps = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
-		today_steps = steps.map do |a|
-			## this is setup to check for yesterday right now
-			if Date.parse(a["startTime"]).day == Time.now.day-1  
-				a["steps"]
-			else
+		if steps.keys.include?("code")
+			render json: {today_steps: "0", today_locations: "0"}
+		else
+			today_steps = steps.map do |a|
+				## this is setup to check for yesterday right now
+				if Date.parse(a["startTime"]).day == Time.now.day-1  
+					a["steps"]
+				else
+				end
 			end
-		end
-		today_steps.delete_if {|x| x == nil}
-		today_total = today_steps.inject {|sum, n| sum + n}
-		today_steps_json = today_total.to_json
+			today_steps.delete_if {|x| x == nil}
+			today_total = today_steps.inject {|sum, n| sum + n}
+			today_steps_json = today_total.to_json
 
 		### locations ####--------------------------------
 
-		locations = HTTParty.get("https://api.humanapi.co/v1/human/locations?access_token=#{user.accesstoken}")
-		today_locations = locations.map do |a|
-			## this is setup to check for yesterday right now
-			if Date.parse(a["startTime"]).day == Time.now.day-1  
-				a
-			else
-			end
-		end 
-		today_locations.delete_if {|x| x == nil}
-		today_locations_total = today_locations.length
-		today_locations_json = today_locations_total.to_json
+			locations = HTTParty.get("https://api.humanapi.co/v1/human/locations?access_token=#{user.accesstoken}")
+			today_locations = locations.map do |a|
+				## this is setup to check for yesterday right now
+				if Date.parse(a["startTime"]).day == Time.now.day-1  
+					a
+				else
+				end
+			end 
+			today_locations.delete_if {|x| x == nil}
+			today_locations_total = today_locations.length
+			today_locations_json = today_locations_total.to_json
 
 
-		render json: {today_steps: today_steps_json, today_locations: today_locations_json}
+			render json: {today_steps: today_steps_json, today_locations: today_locations_json}
+		end
 
 	end
 
 	def othershow
 		user= User.find_by(id: params[:id2].to_i)
 		steps = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
-		binding.pry
 		today_steps = steps.map do |a|
 			## this is setup to check for yesterday right now
 			if Date.parse(a["startTime"]).day == Time.now.day-1  
@@ -106,7 +109,7 @@ class UsersController < ApplicationController
 		today_locations.delete_if {|x| x == nil}
 		today_locations_total = today_locations.length
 		today_locations_json = today_locations_total.to_json
-		render json: {today_steps: today_steps_json, today_locations: today_locations_json}
+		render json: {today_steps: today_steps_json, today_locations: today_locations_json, user: user}
 
 
 	end
