@@ -173,7 +173,7 @@ $(document).ready(function(){
              method: 'GET'
            }).done(function(data){
              var stepsData = data.map(function(i) { return i['steps']});
-             debugger
+             //debugger
              $('.google_map').hide()
              drawBarGraph(stepsData)
 
