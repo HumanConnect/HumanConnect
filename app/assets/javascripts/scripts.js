@@ -167,18 +167,21 @@ $(document).ready(function(){
 
 /// ----------------------D3 step graphs------------------////////
 
-         $('.today_metric_title').on('click', function() {
+         // $('.steps_header').on('click', function() {
            $.ajax({
              url: '/apis/' + humanapi_data[2].user_id + '/step',
              method: 'GET'
            }).done(function(data){
-             var stepsData = data.map(function(i) { return i['steps']});
-             debugger
-             $('.google_map').hide()
-             drawBarGraph(stepsData)
+             if (data.result_json === "Access token not valid") {
+                  $('.steps_header').text("Recent Steps: Token Error")
+             } else{
+                var stepsData = data.map(function(i) { return i['steps']});
+                // $('.google_map').hide()
+                drawBarGraph(stepsData)
+              }
 
          })
-         })
+         // })
 
 
 

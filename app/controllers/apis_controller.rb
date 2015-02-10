@@ -25,9 +25,13 @@ class ApisController < ApplicationController
 
 	def step
 		user = User.find_by(id: params[:id].to_i)
-		result = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
-		result_json = result.to_json
-		render json: result_json
+		result = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}&limit=15")
+		if result.length == 1
+			render json: {result_json: "Access token not valid", }
+		else
+			result_json = result.to_json
+			render json: result_json
+		end
 
 	end
 

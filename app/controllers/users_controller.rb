@@ -48,7 +48,8 @@ class UsersController < ApplicationController
 		### steps ####--------------------------------
 
 		steps = HTTParty.get("https://api.humanapi.co/v1/human/activities?access_token=#{user.accesstoken}")
-		if steps.keys.include?("code")
+		
+		if steps.length == 1
 			render json: {today_steps: "0", today_locations: "0"}
 		else
 			today_steps = steps.map do |a|
@@ -63,7 +64,7 @@ class UsersController < ApplicationController
 			today_steps_json = today_total.to_json
 
 		### locations ####--------------------------------
-
+			
 			locations = HTTParty.get("https://api.humanapi.co/v1/human/locations?access_token=#{user.accesstoken}")
 			today_locations = locations.map do |a|
 				## this is setup to check for yesterday right now

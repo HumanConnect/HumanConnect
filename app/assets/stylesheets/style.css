@@ -464,7 +464,6 @@ a:hover {
 						color: #A6A9AC;
 						letter-spacing: 1px;
 						font-weight: bold;
-						cursor: pointer;
 					}
 			#connect-health-data-btn {
 				display:none;
@@ -505,6 +504,7 @@ a:hover {
 		color: #A6A9AC;
 		font-family: "Andale Mono";
 		font-size: 1.25em;
+		cursor: pointer;
 		
 	}
 
