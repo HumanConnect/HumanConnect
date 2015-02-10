@@ -420,6 +420,7 @@ a:hover {
 				width: 100%;
 			}
 
+
 	.today_summary {
 		position: absolute;
 		margin-left: 20%;
@@ -489,12 +490,39 @@ a:hover {
 				text-align: center;
 			}
 
-	.user_data_wrapper {
+	.user_data_headers {
 		position: absolute;
 		margin-left: 20%;
 		top: 30%;
 		width: 70%;
-		height: 60%;
+		height: 5%;
+		border-radius: 5px;
+		
+
+	}
+
+	.steps_header {
+		color: #A6A9AC;
+		font-family: "Andale Mono";
+		font-size: 1.25em;
+		
+	}
+
+	.map_header{
+		position: absolute;
+		left: 50%;
+		color: #A6A9AC;
+		font-family: "Andale Mono";
+		font-size: 1.25em;
+	
+	}
+
+	.user_data_wrapper {
+		position: absolute;
+		margin-left: 20%;
+		top: 35%;
+		width: 70%;
+		height: 55%;
 		/*border: 1px solid black;*/
 	}
 
