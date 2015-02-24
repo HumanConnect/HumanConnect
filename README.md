@@ -1,31 +1,30 @@
-# humanconnect2
-<strong>HumanConnect</strong><br>
-HumanConnect allows users to see their health and wellness data
-by connecting their wellness devices, apps and services. Through the use of visual data, users can see their desired breakdown<br>
-<strong>HumanConnect</strong><br>
-Team Members
-1. Logan
-2. Ivette
-3. Gael
-4. Gi-Sung
+# HumanConnect
 
-<strong>Technologies</strong><br>
-1. D3- used to create graphs from Human API  data.
-2. Google Maps- used to map a users steps, runs (movement).
-3. Phone Apps- Moves: keeps track of how many steps a user takes. Information sent to Human API, for HumanConnect to render.
-4. Human API : http://i.imgur.com/l46n1vL.png (106KB)
+HumanConnect allows users to visualize their movement, food intake, and location data - and share the information with select friends via a social network. 
+
+It uses HumanAPI and its partner wellness applications to pull user wellness data. Currently we have it set up to work with the "Moves" app and "Misfit Wearables" apps and devices.
+
+General user features:
+* View historical step data (d3)
+* View daily locations (Google Maps)
+* View food intake information
+* View other users on platform
+* Request to follow other users
+* If accepted, view other users step, location, and food intake data
+
+# Team Members
+HumanConnect was a weekend project for the students below, 6 weeks into a software development bootcamp.
+* Logan Smith
+* Ivette Addington
+* Gael Blanchemain
+* Gi-Sung Park
+
+# Technologies Used
+* Ruby on Rails
+* Human API - link for authorizaton flow http://i.imgur.com/l46n1vL.png (106KB)
+* d3.js - used to create graphs from Human API  data
+* Google Maps - used to map a users steps and runs
+* jQuery/ CSS animations - Basic animations used for site interactivity
 
 
-5. rails_12 factor
-6. Github
-
-<strong>Gems</strong><br>
-1. bctyp
-2. d3-rails - gem allowing d3 graphics to render. 
-3. awesome print - 
-4. gmaps4rails - google maps gem
-<br>
-
-Human Api
-Trello Board: https://trello.com/b/YQdmcjEd/project-dev-board
 Live Link: https://fierce-bastion-4864.herokuapp.com/
